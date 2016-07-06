@@ -1,169 +1,406 @@
 @charset "utf-8";
+
 /*关于页面*/
-.about-header{
-	height: 4.3rem;
-	padding: .7rem 1rem;
-}
-.about-header .logo{
-	width: 4rem;
-}
-.about-header .content{
-	margin-left: 1rem;
-	line-height: 2rem;
-}
-.about-header h1{
-	color: #272727;
-}
-.about-header h2{
-	color: #9794A8;
+
+.about-header {
+    padding-top: 4rem;
+    text-align: center;
 }
 
-.about-tel h3, .about-vip h3{
-	height: 3.2rem;
-	padding-left: 1rem;
-	line-height: 3.2rem;
-}
-.about-tel > div{
-	height: 6.2rem;
-    padding: .5rem 2rem;
-    line-height: 3.1rem;
-}
-.about-tel > div .pull-left{
-	font-size: 1.5rem;
-	font-weight: bolder;
-}
-.about-tel > div .pull-right{
-	color: #1582DC;
-    font-size: 1.5rem;
-    font-weight: bolder;
-}
-.about-vip p{
-	padding: .6rem 2rem;
-    color: #000000;
-    font-size: 1.4rem;
-    line-height: 1.9rem;
-    font-weight: 500;
-}
-.about-vip p > span{
-	display: block;
-}
-.about-vip p span:nth-child(2){
-	margin: .5rem 0;
-}
-.about-vip > div{
-	text-align: center;
-	margin-top: 2rem;
-}
-.about-vip input{
-	width: 90%;
-    height: 2.5rem;
-    padding: .4rem 0;
-    font-size: 1.5rem;
-    color: #333;
-}
-/*选择角色页面*/
-.center-box{
-    margin: 7.5rem 2rem;
-}
-.role-box p{
-	border: 1px solid #EFEFF4;
-    border-radius: 1rem;
-    font-size: 1.5rem;
-    padding: 1rem;
-    width: 85%;
+.about-header img {
+    width: 7rem;
     margin: 0 auto;
 }
 
+.about-header > div {
+    margin-top: 1.6rem;
+}
+
+.about-header h1 {
+    color: #404040;
+    font-size: 1.7rem;
+}
+
+.about-header h2 {
+    margin-top: .5rem;
+    color: #9a9a9a;
+    font-size: 1.5rem;
+}
+
+.about-tel {
+    margin-top: 2rem;
+}
+
+.about-vip {
+    margin-top: 1.5rem;
+}
+
+.about-tel h3,
+.about-vip h3 {
+    height: 2rem;
+    background-color: #efeff4;
+    color: #676767;
+    font-size: 1.3rem;
+    padding-left: 1rem;
+    line-height: 2rem;
+}
+
+.about-tel .cf {
+    font-size: 1.7rem;
+    margin: 0 2rem;
+}
+
+.about-tel .cf .pull-left {
+    color: #404040;
+}
+
+.about-tel .cf .pull-right {
+    color: #2a97ff;
+}
+
+.about-tel .cf > div > p {
+    margin-top: 1.6rem;
+}
+
+.about-vip p {
+    margin: 1.5rem 1.5rem 0;
+    color: #404040;
+    font-size: 1.5rem;
+}
+
+.about-vip p span {
+    display: block;
+}
+
+.about-vip p span:nth-child(2) {
+    margin-top: 1rem;
+}
+
+.about-vip input {
+    padding-left: 1rem;
+    height: 3rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+}
+
+.about-vip > div {
+    margin: .8rem 1.5rem;
+}
+
+.about-vip .btn {
+    color: #ffffff;
+    font-size: 2rem;
+    background-color: #94D201;
+    border-radius: .5rem;
+    margin-top: 2rem;
+    height: 4rem;
+    line-height: 3rem;
+    width: 100%;
+}
+
+
+/*选择角色页面*/
+
+.role-box {
+    padding: 4rem 1.8rem 2rem;
+}
+
+.role-box h3 > img {
+    width: 75%;
+}
+
+.role-box a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    border-radius: 1rem;
+    margin: 2.8rem auto 0;
+}
+
+.role-box a img {
+    width: 64%;
+}
+
+.role-box a > p {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    text-align: left;
+    font-size: .5rem;
+}
+
+.role-box a.blue > p {
+    background-color: #2da4e5;
+    color: #c0e3f7;
+}
+
+.role-box a.green > p {
+    background-color: #7eb300;
+    color: #d8e8b3;
+}
+
+.blue {
+    background-color: #3cbafc;
+}
+
+.green {
+    background-color: #94d201;
+}
+
+.role-box a.green {
+    margin-top: 1.5rem;
+}
+
+.role-box h4 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-top: -2rem;
+}
+
+
 /*选择行业页面*/
-.industry-btn{
-	font-size: 1rem;
-	padding: .5rem;
-    width: 45%;
-    margin: .5rem auto;
+
+.industry-box {
+    padding: 4rem 1.8rem;
+}
+
+.industry-box h3 > img {
+    width: 85%;
+}
+
+.industry-box > div {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.industry-box > div .row {
+    flex-basis: 100%;
+    display: flex;
+}
+
+.industry-box > div a {
+    flex: 1;
+    margin: 1rem 1.4rem;
+}
+
+.industry-box > div .row.two a {
+    flex: 0 0 23%;
+}
+
+.industry-box > div a > p {
+    color: #4d4d4d;
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+    margin-top: .5rem;
+}
+
+
+/*功能列表页面*/
+
+.feature-box li {
+    padding: .8rem 1.2rem .4rem;
+}
+
+.feature-box img {
+    width: 14.6%;
+    position: absolute;
+}
+
+.feature-box a {
+    display: block;
+}
+
+.feature-box a > div {
+    display: inline-block;
+    margin-left: 19%;
+    border-bottom: 1px solid #cccccc;
+    width: 84%;
+    line-height: 2.5rem;
+    height: 5rem;
+}
+
+.feature-box h4 {
+    color: #404040;
+    font-size: 1.6rem;
+}
+
+.feature-box p {
+    color: #999999;
+    font-size: 1.3rem;
+}
+
+.feature-foot {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #f9f9f9;
+    border-top: 1px solid #cccccc;
+    height: 4.9rem;
+    width: 100%;
+}
+
+.feature-foot div {
     display: inline-block;
 }
-.industry-btn:first-of-type{
-	margin-top: 2.5rem;
+
+.feature-foot img {
+    width: 3.5rem;
 }
+
+.feature-foot > div {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    color: #7c7d81;
+    font-size: .5rem;
+}
+
+.feature-foot > div > .cur {
+    color: #56a1ee;
+}
+
+.feature-foot > div > .work-foot {
+    margin-right: 12rem;
+}
+
+
+/*.feature-box {
+    padding: .9rem 1.2rem;
+}
+
+.feature-box img {
+    width: 14.6%;
+}
+
+.feature-box a > div {
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.feature-box h4 {
+    color: #404040;
+    font-size: 1.6rem;
+    margin-top: .4rem;
+}
+
+.feature-box p {
+    color: #999999;
+    font-size: 1.3rem;
+}
+
+.feature-box li {
+    border-bottom: 1px solid #cccccc;
+}
+
+.feature-box li a {
+    height: 6rem;
+    display: block;
+}
+*/
+
 
 /*签到页面*/
 
-.picture-box{
-	border-bottom: 1px solid #ccc;
-}
-.picture-box img{
-	width: 7rem;
-}
-.picture-box > div, .picture-box > h3, .orientation-box > div, .orientation-box > h3{
-	margin: 1rem;
-}
-.orientation-box img{
-	width: 5rem;
-}
-.orientation-box p:first-of-type{
-	margin-bottom: 2.3rem;
-	font-size: 1.5rem;
-    font-weight: 600;
-}
-.orientation-box p:last-of-type{
-	font-size: 1.3rem;
-    color: #ccc;
-}
-.orientation-box .pull-right{
-	color: #03A9F4;
-	margin-top: 3.5rem;
-    font-size: 1.5rem;
-}
-.orientation-box .btn{
-	display: inline-block;
-	width: 49%;
-	font-size: 1rem;
+.picture-box {
+    border-bottom: 1px solid #ccc;
 }
 
-/**增加终端页面*/
-.addterminal-box{
-	color: #333333;
-	font-size: 1.6rem;
-	margin: 2rem;
+.picture-box img {
+    width: 7rem;
 }
-.addterminal-box li{
-	position: relative;
+
+.picture-box > div,
+.picture-box > h3,
+.orientation-box > div,
+.orientation-box > h3 {
+    margin: 1rem;
+}
+
+.orientation-box img {
+    width: 5rem;
+}
+
+.orientation-box p:first-of-type {
+    margin-bottom: 2.3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.orientation-box p:last-of-type {
+    font-size: 1.3rem;
+    color: #ccc;
+}
+
+.orientation-box .pull-right {
+    color: #03A9F4;
+    margin-top: 3.5rem;
+    font-size: 1.5rem;
+}
+
+.orientation-box .btn {
+    display: inline-block;
+    width: 49%;
+    font-size: 1rem;
+}
+
+
+/**增加终端页面*/
+
+.addterminal-box {
+    color: #333333;
+    font-size: 1.6rem;
+    margin: 2rem;
+}
+
+.addterminal-box li {
+    position: relative;
     height: 3rem;
     line-height: 2rem;
     margin-bottom: 1.7rem;
 }
-.addterminal-box li > label{
-	width: 9.5rem;
+
+.addterminal-box li > label {
+    width: 9.5rem;
     display: inline-block;
     border-right: .1rem solid #b3b3b3;
     position: absolute;
 }
-.addterminal-box li > label > i{
-	margin: .5rem;
+
+.addterminal-box li > label > i {
+    margin: .5rem;
 }
-.addterminal-box input, .addterminal-box select{
-	padding-left: 11rem;
-	border: 0;
-	border-bottom: .1rem solid #cccccc;
-	height: 100%;
-	width: 100%;
-	padding-bottom: 1rem;
-	font-size: 1.6rem;
+
+.addterminal-box input,
+.addterminal-box select {
+    padding-left: 11rem;
+    border: 0;
+    border-bottom: .1rem solid #cccccc;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 1rem;
+    font-size: 1.6rem;
 }
-.addterminal-box select{
-	padding-right: 1.5rem;
-	appearance: none;
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	background: url("image/select.png") no-repeat scroll right center transparent;
-	background-size: 1.5rem 1rem;
+
+.addterminal-box select {
+    padding-right: 1.5rem;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url("image/select.png") no-repeat scroll right center transparent;
+    background-size: 1.5rem 1rem;
 }
-.addterminal-box select > option{
-	text-indent: 2rem;
+
+.addterminal-box select > option {
+    text-indent: 2rem;
 }
-.addterminal-box li.orientation{
-	height: 12rem;
+
+.addterminal-box li.orientation {
+    height: 12rem;
     margin-left: -1rem;
     border-bottom: 1px solid #cccccc;
 }
-
