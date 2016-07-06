@@ -8,6 +8,8 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 Server/node_modules/
+Client/bower_components/
+Client/logs/
 # Windows Installer files
 *.cab
 *.msi

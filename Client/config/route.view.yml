@@ -1,0 +1,62 @@
+#自定义视图路由配置，httpmethod（get|delete|post|put|patch）,responetype(html|json|file|xml)
+portal:                                      #门户入口
+  - httpmethod: 'get'             
+    routepath: '/portal'
+    description: '首页'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'portal.html' 
+about:
+  - httpmethod: 'get'
+    routepath: '/view/yzj/about'
+    description: '关于玄讯'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'about.html'     
+industry:
+  - httpmethod: 'get'
+    routepath: '/view/yzj/industry'
+    description: '选择行业'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'industry.html'     
+role:
+  - httpmethod: 'get'
+    routepath: '/view/yzj/role'
+    description: '选择角色'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'role.html' 
+salesman:
+  - httpmethod: 'get'
+    routepath: '/view/yzj/salesman/work/featurelist'
+    description: '功能列表'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'salesman/work/featurelist.html'            
+  - httpmethod: 'get'
+    routepath: '/view/yzj/salesman/work/check'
+    description: '考勤'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'salesman/work/check.html'   
+  - httpmethod: 'get'
+    routepath: '/view/yzj/salesman/work/terminal'
+    description: '附近终端'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'salesman/work/terminal.html'  
+  - httpmethod: 'get'
+    routepath: '/view/yzj/salesman/work/addterminal'
+    description: '增加终端'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'salesman/work/addterminal.html'    

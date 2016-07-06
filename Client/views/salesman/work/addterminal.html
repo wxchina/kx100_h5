@@ -1,0 +1,89 @@
+<div class="addterminal-box">
+	<ul>
+		<li>
+			<label>
+				条形码
+				<i class="red-txt">*</i>
+			</label>
+			<input placeholder="请输入" />
+		</li>
+		<li>
+			<label>
+				终端名称
+				<i class="red-txt">*</i>
+			</label>
+			<input placeholder="请输入" />
+		</li>
+		<li>
+			<label>
+				行政区域
+				<i class="red-txt">*</i>
+			</label>
+			<select>
+				<option>请选择</option>
+				<option>广东省</option>
+				<option>江苏省</option>
+
+			</select>
+		</li>
+		<li>
+			<label>
+				终端级别
+				<i class="red-txt">*</i>
+			</label>
+			<select>
+				<option>请选择</option>
+			</select>
+		</li>
+		<li>
+			<label>
+				营销区域
+				<i class="red-txt">*</i>
+			</label>
+			<select>
+				<option>请选择</option>
+			</select>
+		</li>
+		<li>
+			<label>
+				联系电话
+				<i class="red-txt">*</i>
+			</label>
+			<input placeholder="请输入" />
+		</li>
+		<li>
+			<label>
+				传真
+				<i class="red-txt">*</i>
+			</label>
+			<input placeholder="请输入" />
+		</li>
+		<li class="orientation">
+			<section class="orientation-box">
+				<h3>
+					签到定位
+					<i class="red-txt">*</i>
+				</h3>
+				<div class="cf">
+					<div class="pull-left">
+						<!-- <img src="assets/css/image/orientation.png" /> -->
+						<iframe id="baiduMap" style="height:5em;width:5em;" src="assets/script/map.iframe.html" name="baiduMap"></iframe>
+						<div class="inline vb">
+							<p id="detailAds"></p>
+						</div>
+					</div>
+					<div class="pull-right" id="reLocation" onclick="window.frames.baiduMap.location.reload()">
+						重新定位
+					</div>
+				</div>
+			</section>
+		</li>
+		<li>
+			<label>
+				备注
+				<i class="red-txt">*</i>
+			</label>
+			<input placeholder="请输入" />
+		</li>
+	</ul>
+</div>

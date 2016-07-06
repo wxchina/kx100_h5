@@ -1,0 +1,25 @@
+{
+    "name": "client bower",
+    "version": "1.0.0",
+    "description": "玄讯云之家前端第三方组件和框架依赖列表",
+    "author": "广州玄武无线科技股份有限公司,玄讯产品事业部,快消开发组",
+    "homepage": "http://www.xtion.com:8080",
+    "dependencies": {
+        "jquery": "1.11.1",
+        "underscore": "1.8.3",
+        "requirejs": "2.1.16",
+        "echarts": "2.2.1",
+        "bowser": "0.7.3"
+    },
+    "devDependencies": {
+
+    },
+    "bugs": {
+        "url": "",
+        "email": "jian_suna@163.com"
+    },
+    "contributors": [{
+        "name": "jiansuna",
+        "email": "jian_suna@163.com"
+    }]
+}
