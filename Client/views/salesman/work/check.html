@@ -1,34 +1,39 @@
-<div func="check">
-	<section class="picture-box">
-		<h3>
-			签到拍照
-			<i class="red-txt">*</i>
-		</h3>
-		<div>
-			<img src="assets/css/image/addimg.png" />
-		</div>
-	</section>
-	<section class="orientation-box">
-		<h3>
-			签到定位
-			<i class="red-txt">*</i>
-		</h3>
-		<div class="cf">
-			<div class="pull-left">
-				<!-- <img src="assets/css/image/orientation.png" /> -->
-				<iframe id="baiduMap" style="height:5em;width:5em;" src="assets/script/map.iframe.html" name="baiduMap"></iframe>
-				<div class="inline vb">
-					<p id="detailAds"></p>
-					<p>精确到165米</p>
-				</div>
-			</div>
-			<div class="pull-right" id="reLocation" onclick="window.frames.baiduMap.location.reload()">
-				重新定位
-			</div>
-		</div>
-		<div>
-			<div class="btn">上班</div>
-			<div class="btn">下班</div>
-		</div>
-	</section>
+<div class="check-box" func="check">
+    <section class="picture-box">
+        <h3>
+            签到拍照
+            <i class="red-txt">*</i>
+        </h3>
+        <div id="takePic">
+            <img src="assets/css/image/takepic.png" />
+        </div>
+    </section>
+    <section class="orientation-box">
+        <h3>
+            签到定位
+            <i class="red-txt">*</i>
+        </h3>
+        <div class="cf">
+            <div class="pull-left">
+                <img src="assets/css/image/orientation.png" />
+            </div>
+            <div class="pull-right location-content">
+                <p id="detailAds">广东省广州市天河区体育西路101号</p>
+                <div class="cf">
+                    <span class="pull-left">精确到165米</span>
+                    <span class="pull-right" id="resetLocation">重新定位</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="btn-box">
+        <div class="btn" id="onDuty">
+            <span><img src="assets/css/image/onduty.png" /></span>
+            <span>上班</span>
+        </div>
+        <div class="btn" id="offDuty">
+            <span><img src="assets/css/image/offduty.png" /></span>
+            <span>下班</span>
+        </div>
+    </div>
 </div>

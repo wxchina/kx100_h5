@@ -1,11 +1,20 @@
 <%- include components/layouts/header.html %>
-<!-- 页面主体内容 -->
-<div id="container" class="main">
-	
-</div>
-<!-- loading图标 -->
-<div id="loadingBox" class="hide">
-	<div class="mask"></div>
-	<div class="loading-content"><span>loading...</span></div>
-</div>
-<%- include components/layouts/footer.html %>
+    <!-- 页面主体内容 -->
+    <div id="container" class="main">
+    </div>
+    <!-- 部分内容已加载时loading图标 -->
+    <div id="loadingBox" class="hide loading-box">
+        <div class="loading-content">
+            <img src="assets/css/image/loading.gif">
+            <div>正在加载</div>
+        </div>
+    </div>
+    <!--页面空白时的loading图标-->
+    <div id="loadingPage" class="hide flex-center">
+        <img src="assets/css/image/loadpage.gif">
+    </div>
+    <!--数据已提交-->
+    <div id="submitSuc" class="hide submit-suc absolute-center">
+        数据已提交
+    </div>
+    <%- include components/layouts/footer.html %>

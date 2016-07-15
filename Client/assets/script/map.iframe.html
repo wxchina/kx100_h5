@@ -1,40 +1,139 @@
 <html>
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-	<style type="text/css">
-		body, html{width: 100%;height: 100%;margin:0;font-family:"微软雅黑";font-size:14px;}
-		#allmap {width:100%;height:100%;}
-	</style>
-	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Rx19WLsksM2rLBpWVONnaa4I"></script>
-	<title>地图</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+    body,
+    html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        font-family: "微软雅黑";
+        font-size: 14px;
+    }
+    
+    #allmap {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #allmap .BMapLabel a {
+        text-decoration: none;
+        color: #000000;
+    }
+    
+    #allmap .BMapLabel {
+        padding: 10px 10px !important;
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px #333;
+        border-color: #cccccc !important;
+    }
+    
+    #terminalDetail {
+        z-index: 999999;
+        background-color: #FFFFFF;
+        opacity: 0.9;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 130px;
+        display: flex;
+        padding: 25px;
+    }
+    
+    #terminalDetail .left {}
+    
+    #terminalDetail .right {
+        border-left: 1px solid #cccccc;
+        width: 80px;
+        text-align: center;
+        margin-top: 20px;
+        height: 100px;
+    }
+    
+    #terminalDetail .right a {
+        color: #03A9F4;
+        text-decoration: none;
+    }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Rx19WLsksM2rLBpWVONnaa4I"></script>
+    <title>地图</title>
 </head>
-<body>
-	<div id="allmap"></div>
+
+<body onload="load();">
+    <div id="allmap"></div>
+    <div id="terminalDetail" style="display: none;">
+        <div class="left">
+            <h5>
+                w导入终端55
+            </h5>
+            <p>
+                广东省天河区体育西路107号之。。。
+            </p>
+            <p>
+                业务员：w导入人员1
+            </p>
+        </div>
+        <div class="right">
+            <a href="http://127.0.0.1:8085/#/view/yzj/salesman/work/addterminal">
+                详情
+            </a>
+        </div>
+    </div>
 </body>
+
 </html>
 <script type="text/javascript">
-	// 百度地图API功能
-	
+// 百度地图API功能
 
-	var geolocation = new BMap.Geolocation();
-	geolocation.getCurrentPosition(function(r){
-		if(this.getStatus() == BMAP_STATUS_SUCCESS){
-			var map = new BMap.Map("allmap");
-			var point = new BMap.Point(r.point.lng,r.point.lat);
-			map.centerAndZoom(point,15);
-			var mk = new BMap.Marker(r.point);
-			map.addOverlay(mk);
-			map.panTo(r.point);
-			//显示位置
-			var geoc = new BMap.Geocoder();
-			geoc.getLocation(point, function(rs){
-				var addComp = rs.addressComponents;
-				window.top.document.getElementById('detailAds') && (window.top.document.getElementById('detailAds').innerHTML = addComp.district + addComp.street + addComp.streetNumber);
-			})
-		}
-		else {
-			console.log('failed'+this.getStatus());
-		}        
-	},{enableHighAccuracy: true})
+
+var geolocation = new BMap.Geolocation();
+geolocation.getCurrentPosition(function(r) {
+    if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+        var map = new BMap.Map("allmap");
+        var point = new BMap.Point(r.point.lng, r.point.lat);
+        map.centerAndZoom(point, 15);
+        var mk = new BMap.Marker(r.point);
+        map.addOverlay(mk);
+        map.panTo(r.point); //显示位置 
+        var geoc = new BMap.Geocoder();
+        geoc.getLocation(point, function(rs) {
+            var addComp = rs.addressComponents;
+            window.top.document.getElementById('detailAds') && (window.top.document.getElementById('detailAds').innerHTML = addComp.district + addComp.street + addComp.streetNumber);
+        })
+    } else {
+        console.log('failed' + this.getStatus());
+    }
+}, {
+    enableHighAccuracy: true
+})
+
+
+// 百度地图API功能
+var map = new BMap.Map("allmap");
+var point = new BMap.Point(116.331398, 39.897445);
+map.centerAndZoom(point, 12);
+map.enableScrollWheelZoom();
+//加红点
+var mk = new BMap.Marker(point);
+map.addOverlay(mk);
+//增加附近终端
+function addLayer(text, x, y) {
+    var opts = {
+        position: point, // 指定文本标注所在的地理位置
+        offset: new BMap.Size(x, y) //设置文本偏移量
+    }
+    var label = new BMap.Label(text, opts); // 创建文本标注对象
+    map.addOverlay(label);
+}
+addLayer("<a href=\"http:\/\/127.0.0.1:8085/#/view/yzj/salesman/work/addterminal \">w导入终端100</a>", 30, -10);
+addLayer("w导入终端86", 10, -50);
+
+function load() {
+    map.addEventListener("click", function(e) {
+        e.overlay && (document.getElementById("terminalDetail").style.display = "flex");
+    });
+}
 </script>

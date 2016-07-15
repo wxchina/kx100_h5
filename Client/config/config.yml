@@ -47,7 +47,7 @@ development:
 #测试环境配置
 test:
   server:
-    port: 8082                                   #测试环境端口
+    port: 8085                                   #测试环境端口
     host: '127.0.0.1'                            #测试环境IP
   gateway:
     port: 8081                                   #后端API PORT

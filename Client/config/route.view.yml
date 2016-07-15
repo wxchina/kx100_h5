@@ -31,7 +31,7 @@ role:
     responetype: 'html'
     authorized: true
     physical_file: 'role.html' 
-salesman:
+salesman-work:
   - httpmethod: 'get'
     routepath: '/view/yzj/salesman/work/featurelist'
     description: '功能列表'
@@ -59,4 +59,68 @@ salesman:
     enableroute: true
     responetype: 'html'
     authorized: true
-    physical_file: 'salesman/work/addterminal.html'    
+    physical_file: 'salesman/work/addterminal.html'
+  - httpmethod: 'get'
+    routepath: '/view/yzj/salesman/work/myterminal'
+    description: '我的终端'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'salesman/work/myterminal.html'
+  - httpmethod: 'get'
+    routepath: '/view/yzj/salesman/work/editterminal'
+    description: '修改终端'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'salesman/work/editterminal.html'    
+salesman-performance: 
+  - httpmethod: 'get'
+    routepath: '/view/yzj/salesman/performance/performlist'
+    description: '业绩功能列表'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'salesman/performance/performlist.html' 
+  - httpmethod: 'get'
+    routepath: '/view/yzj/salesman/performance/salesvolumn'
+    description: '销量'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'salesman/performance/salesvolumn.html'
+  - httpmethod: 'get'
+    routepath: '/view/yzj/salesman/performance/rank'
+    description: '月度排名'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'salesman/performance/rank.html'      
+  - httpmethod: 'get'
+    routepath: '/view/yzj/salesman/performance/visit'
+    description: '今日拜访'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'salesman/performance/visit.html'
+  - httpmethod: 'get'
+    routepath: '/view/yzj/salesman/performance/visitstep'
+    description: '店面工作(拜访八步骤)'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'salesman/performance/visitstep.html'      
+  - httpmethod: 'get'
+    routepath: '/view/yzj/salesman/performance/mypromotion'
+    description: '促销活动'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'salesman/performance/mypromotion.html'
+  - httpmethod: 'get'
+    routepath: '/view/yzj/salesman/performance/terminalactivity'
+    description: '终端活跃度'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'salesman/performance/terminalactivity.html'        
