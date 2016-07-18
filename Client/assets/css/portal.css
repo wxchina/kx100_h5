@@ -1,927 +1,1078 @@
-    @charset "utf-8";
-    /*首页*/
-    
-    .submit-suc {
-        background-color: #050505;
-        border-radius: .5rem;
-        opacity: 0.7;
-        padding: 1.6rem;
-        font-size: 1.5rem;
-        color: #ffffff;
-        top: 66%;
-    }
-    /*关于页面*/
-    
-    .about-header {
-        padding-top: 4rem;
-        text-align: center;
-    }
-    
-    .about-header img {
-        width: 7rem;
-        margin: 0 auto;
-    }
-    
-    .about-header > div {
-        margin-top: 1.6rem;
-    }
-    
-    .about-header h1 {
-        color: #404040;
-        font-size: 1.7rem;
-    }
-    
-    .about-header h2 {
-        margin-top: .5rem;
-        color: #9a9a9a;
-        font-size: 1.5rem;
-    }
-    
-    .about-tel {
-        margin-top: 2rem;
-    }
-    
-    .about-vip {
-        margin-top: 1.5rem;
-    }
-    
-    .about-tel h3,
-    .about-vip h3 {
-        height: 2rem;
-        background-color: #efeff4;
-        color: #676767;
-        font-size: 1.3rem;
-        padding-left: 1rem;
-        line-height: 3rem;
-        height: 3rem;
-    }
-    
-    .about-tel .cf {
-        font-size: 1.7rem;
-        margin: 0 2rem;
-    }
-    
-    .about-tel .cf .pull-left {
-        color: #404040;
-    }
-    
-    .about-tel .cf .pull-right {
-        color: #2a97ff;
-    }
-    
-    .about-tel .cf > div > p {
-        margin-top: 1.6rem;
-    }
-    
-    .about-vip p {
-        margin: 1.5rem 1.5rem 0;
-        color: #404040;
-        font-size: 1.5rem;
-    }
-    
-    .about-vip p span {
-        display: block;
-    }
-    
-    .about-vip p span:nth-child(2) {
-        margin-top: 1rem;
-    }
-    
-    .about-vip input {
-        padding-left: 1rem;
-        height: 3rem;
-        width: 100%;
-        border: 1px solid #ccc;
-        border-radius: .5rem;
-        font-size: 1.5rem;
-    }
-    
-    .about-vip > div {
-        margin: .8rem 1.5rem;
-    }
-    
-    .about-vip .btn {
-        color: #ffffff;
-        font-size: 2rem;
-        background-color: #94D201;
-        border-radius: .5rem;
-        margin-top: 2rem;
-        height: 4rem;
-        line-height: 3rem;
-        width: 100%;
-    }
-    /*选择角色页面*/
-    
-    .role-box {
-        padding: 3rem 1.8rem 2rem;
-    }
-    
-    .role-box h3 > img {
-        width: 75%;
-    }
-    
-    .role-box a {
-        width: 100%;
-        display: block;
-        text-align: center;
-        border-radius: 1rem;
-        margin: 2.8rem auto 0;
-    }
-    
-    .role-box a img {
-        width: 55%;
-    }
-    
-    .role-box a > p {
-        border-bottom-left-radius: 1rem;
-        border-bottom-right-radius: 1rem;
-        margin-top: 1rem;
-        padding: 1rem 2rem;
-        text-align: left;
-        font-size: 1rem;
-    }
-    
-    .role-box a.blue > p {
-        background-color: #2da4e5;
-        color: #c0e3f7;
-    }
-    
-    .role-box a.green > p {
-        background-color: #7eb300;
-        color: #d8e8b3;
-    }
-    
-    .blue {
-        background-color: #3cbafc;
-    }
-    
-    .green {
-        background-color: #94d201;
-    }
-    
-    .role-box a.green {
-        margin-top: 2.5rem;
-    }
-    
-    .role-box h4 {
-        color: #ffffff;
-        font-size: 1.5rem;
-        margin-top: -2.5rem;
-    }
-    /*选择行业页面*/
-    
-    .industry-box {
-        padding: 4rem 1.8rem;
-    }
-    
-    .industry-box h3 > img {
-        width: 85%;
-    }
-    
-    .industry-box > div {
-        margin-top: 2.5rem;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    
-    .industry-box > div .row {
-        flex-basis: 100%;
-        display: flex;
-    }
-    
-    .industry-box > div a {
-        flex: 1;
-        margin: 1rem 1.4rem;
-    }
-    
-    .industry-box > div .row.two a {
-        flex: 0 0 23%;
-    }
-    
-    .industry-box > div a > p {
-        color: #4d4d4d;
-        font-size: 1.5rem;
-        width: 100%;
-        text-align: center;
-        margin-top: .5rem;
-    }
-    /*功能列表页面*/
-    
-    .feature-box li {
-        padding: .8rem 1.2rem .4rem;
-    }
-    
-    .feature-foot h5 {
-        font-size: 1rem;
-    }
-    
-    .feature-box img {
-        width: 14.6%;
-        position: absolute;
-    }
-    
-    .feature-box a {
-        display: block;
-    }
-    
-    .feature-box a > div {
-        display: inline-block;
-        margin-left: 19%;
-        border-bottom: 1px solid #cccccc;
-        width: 84%;
-        line-height: 2.5rem;
-        height: 5rem;
-    }
-    
-    .feature-box h4 {
-        color: #404040;
-        font-size: 1.6rem;
-    }
-    
-    .feature-box p {
-        color: #999999;
-        font-size: 1.3rem;
-    }
-    
-    .feature-foot {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        background-color: #f9f9f9;
-        border-top: 1px solid #cccccc;
-        height: 4.9rem;
-        width: 100%;
-    }
-    
-    .feature-foot a {
-        display: inline-block;
-    }
-    
-    .feature-foot img {
-        width: 3.5rem;
-    }
-    
-    .feature-foot > div {
-        text-align: center;
-        margin: 0 auto;
-        width: 100%;
-        color: #7c7d81;
-        font-size: .5rem;
-    }
-    
-    .feature-foot > div > .cur {
-        color: #56a1ee;
-    }
-    
-    .feature-foot > div > .work-foot {
-        margin-right: 12rem;
-    }
-    /*签到页面*/
-    
-    .picture-box,
-    .orientation-box {
-        border-bottom: 1px solid #ccc;
-    }
-    
-    .picture-box img {
-        width: 23rem;
-    }
-    
-    .picture-box > h3,
-    .orientation-box > h3 {
-        padding: 1.5rem 2rem 1rem;
-        font-size: 1.7rem;
-    }
-    
-    .picture-box > div {
-        background-color: #f8c753;
-        height: 16rem;
-        border-radius: .6rem;
-        margin: 0 1.8rem 2rem;
-        text-align: right;
-    }
-    
-    .orientation-box > div {
-        margin: 0 1.8rem 1.2rem;
-    }
-    
-    .orientation-box img {
-        width: 7.5rem;
-    }
-    
-    .location-content {
-        margin-left: .5rem;
-        width: 68%;
-        height: 5.8rem;
-    }
-    
-    .orientation-box p:first-of-type {
-        height: 5.5rem;
-        font-size: 1.6rem;
-        color: #333333;
-    }
-    
-    .location-content .pull-left {
-        color: #999999;
-        font-size: 1.6rem;
-    }
-    
-    .location-content .pull-right {
-        color: #2a97ff;
-        font-size: 1.6rem;
-    }
-    
-    .check-box .btn-box {
-        margin: 1rem 2rem;
-    }
-    
-    .check-box .btn-box .btn {
-        width: 46%;
-        display: inline-block;
-        color: #ffffff;
-        font-size: 1.8rem;
-        border-radius: .5rem;
-        height: 4.5rem;
-        padding: 1rem;
-    }
-    
-    .check-box .btn-box .btn:first-of-type {
-        background-color: #3cbaff;
-        margin-right: 1.5rem;
-    }
-    
-    .check-box .btn-box .btn:last-of-type {
-        background-color: #515ca5;
-    }
-    
-    .check-box .btn-box .btn img {
-        width: 3rem;
-    }
-    /**附近终端页面**/
-    
-    #allmap .BMapLabel {
-        padding: 10px 10px !important;
-        border-radius: 5px;
-        box-shadow: 5px 5px 5px #333;
-        border-color: #cccccc !important;
-    }
-    
-    #terminalDetail {
-        display: flex;
-        height: 10rem;
-        position: fixed;
-        width: 100%;
-        left: 0;
-        bottom: 0;
-        background-color: #FFFFFF;
-        opacity: 0.9;
-    }
-    
-    #terminalDetail .terminal-info {
-        flex: 1;
-    }
-    
-    #terminalDetail .terminal-info > div {
-        margin: 1.5rem;
-        line-height: 2rem;
-    }
-    
-    #terminalDetail .terminal-info > div h5 {
-        color: #404040;
-        font-size: 1.6rem;
-        height: 2.5rem;
-    }
-    
-    #terminalDetail .terminal-info > div p {
-        color: #8c8c8c;
-        font-size: 1.2rem;
-        height: 2.5rem;
-        overflow: hidden;
-        line-height: 2.5rem;
-    }
-    
-    #terminalDetail .terminal-link a {
-        width: 8rem;
-        color: #2a97ff;
-        font-size: 1.6rem;
-    }
-    /**增加终端页面*/
-    
-    .addterminal-box {
-        color: #333333;
-        font-size: 1.6rem;
-        padding: 1.3rem 2rem;
-    }
-    
-    .addterminal-box li {
-        position: relative;
-        height: 3rem;
-        line-height: 2rem;
-        margin-bottom: 1.1rem;
-    }
-    
-    .addterminal-box li > label {
-        width: 9rem;
-        display: inline-block;
-        border-right: .1rem solid #b3b3b3;
-        position: absolute;
-        color: #404040;
-        font-size: 1.6rem;
-    }
-    
-    .addterminal-box li > label > i {
-        margin: .5rem;
-    }
-    
-    .addterminal-box input,
-    .addterminal-box select {
-        padding: 0 2.5rem 0 10.5rem;
-        border: 0;
-        border-bottom: .1rem solid #cccccc;
-        height: 100%;
-        width: 100%;
-        padding-bottom: 1rem;
-        font-size: 1.6rem;
-        color: #8c8c8c;
-    }
-    
-    .addterminal-box select {
-        padding-right: 1.5rem;
-        appearance: none;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        background: url("image/select.png") no-repeat scroll right center transparent;
-        background-size: 1.5rem 1rem;
-    }
-    
-    .addterminal-box select > option {
-        text-indent: 2rem;
-    }
-    
-    .addterminal-box li.orientation {
-        height: 12rem;
-        border-bottom: 1px solid #cccccc;
-    }
-    
-    .vrcode-box {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 2.3rem;
-    }
-    
-    .addterminal-box .orientation-box {
-        border: 0;
-    }
-    
-    .addterminal-box .orientation-box h3 {
-        padding: 0 0 1rem 0;
-    }
-    
-    .addterminal-box .orientation-box > div {
-        margin-left: 0;
-    }
-    
-    .addterminal-box li..orientation {
-        margin-bottom: 0;
-    }
-    /*我的终端列表*/
-    
-    .search-wrap {
-        background-color: #ebeced;
-        height: 4rem;
-        padding: .6rem;
-    }
-    
-    .search-box {
-        background-color: #ffffff;
-        color: #8e8e93;
-        font-size: 1.5rem;
-        border-radius: .5rem;
-        height: 2.8rem;
-        padding-left: 1rem;
-        line-height: 2.5rem;
-    }
-    
-    .search-box input {
-        border: 0;
-        height: 2rem;
-        font-size: 1.5rem;
-        width: 85%;
-    }
-    
-    .search-box img {
-        width: 1.5rem;
-    }
-    
-    .terminal-list li {
-        border-bottom: 1px solid #cccccc;
-        padding: .8rem 1.8rem;
-    }
-    
-    .terminal-list li > div {
-        display: inline-block;
-    }
-    
-    .terminal-list li p:first-of-type {
-        color: #404040;
-        font-size: 1.6rem;
-    }
-    
-    .terminal-list li p {
-        color: #8c8c8c;
-        font-size: 1.2rem;
-    }
-    
-    .terminal-list li span {
-        color: #343434;
-        font-size: 1.6rem;
-    }
-    
-    .terminal-list .pull-left {
-        line-height: 1.9rem;
-    }
-    
-    .terminal-list .pull-left span {
-        margin-right: .5rem;
-    }
-    
-    .terminal-list .pull-right {
-        line-height: 6.2rem;
-        height: 6.2rem;
-    }
-    
-    .terminal-list .pull-left img {
-        width: 1rem;
-    }
-    
-    .terminal-list .pull-right img {
-        margin-right: 1rem;
-        width: 1.1rem;
-    }
-    /*业务员-业绩*/
-    /**功能列表*/
-    
-    .performlist-box {
-        padding: 3rem 1rem 8rem;
-        height: 100%;
-        text-align: center;
-    }
-    
-    .performlist-box img {
-        height: 100%;
-    }
-    
-    .performlist-box ul {
-        opacity: 0;
-        position: absolute;
-        top: 3rem;
-        left: 1rem;
-        height: 85%;
-        width: 95%;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .performlist-box ul li:first-child {
-        height: 40%;
-        display: flex;
-    }
-    
-    .performlist-box ul li:first-child a {
-        flex: 1;
-    }
-    
-    .performlist-box ul li:not(:first-child) {
-        flex: 1;
-        margin-top: 1rem;
-    }
-    
-    .performlist-box ul li:not(:first-child) > a {
-        display: flex;
-        width: 100%;
-        height: 100%;
-    }
-    /*我的订单*/
-    
-    .salesvolumn-box .require-box {
-        height: 4rem;
-        border-top: 1px solid #cccccc;
-        border-bottom: 1px solid #cccccc;
-        background-color: #ebeced;
-        font-size: 1.3rem;
-        color: #343434;
-        line-height: 2rem;
-        text-align: center;
-        padding: 1rem;
-    }
-    
-    .salesvolumn-box .require-box > ul {
-        display: flex;
-    }
-    
-    .salesvolumn-box .require-box > ul > li {
-        flex: 1;
-    }
-    
-    .salesvolumn-box .require-box > ul > li:first-child {
-        border-right: 1px solid #cccccc;
-    }
-    
-    .salesvolumn-box .require-box > ul > li img {
-        width: 5%;
-    }
-    
-    .salesvolumn-box .require-box > ul > li > span:first-child img {
-        width: 10%;
-    }
-    
-    .salesvolumn-box .require-box > ul > li > span.icon img {
-        margin-bottom: .3rem;
-    }
-    
-    .salesvolumn-box .require-box > ul > li > span:not(.icon) {
-        margin: 0 .5rem;
-    }
-    
-    .orderlist-box > div {
-        color: #8d8d8d;
-        font-size: 1.1rem;
-        height: 3rem;
-        line-height: 3rem;
-        background-color: #ffffff;
-        border-bottom: 1px solid #ebeced;
-        padding-left: 1.35rem
-    }
-    
-    .order-header,
-    .order-content {
-        background-color: #edeef0;
-        font-size: 1.1rem;
-        color: #333333;
-        display: flex;
-        text-align: center;
-    }
-    
-    .order-header {
-        background-color: #edeef0;
-        height: 4.5rem;
-        line-height: 4.5rem;
-    }
-    
-    .order-header li,
-    .order-content li {
-        flex: 1;
-    }
-    
-    .order-header li:not(:last-child),
-    .order-content li > ul > li:not(:last-child) {
-        border-right: 1px solid #d9d9d9;
-    }
-    
-    .order-content li > ul > li {
-        border-bottom: 1px solid #d9d9d9;
-    }
-    
-    .order-content {
-        flex-direction: column;
-        background-color: #ffffff;
-    }
-    
-    .order-content ul {
-        display: flex;
-        height: 4.5rem;
-        line-height: 4.5rem;
-    }
-    
-    .drop-list {
-        position: relative;
-        background: #ffffff;
-        box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.7);
-        width: 28rem;
-        border-radius: 1rem;
-        color: #333333;
-        font-size: 1.3rem;
-        top: 1rem;
-        left: 1rem;
-    }
-    
-    .drop-list img {
-        position: absolute;
-        top: -2rem;
-        width: 10%;
-        left: 4rem;
-    }
-    
-    .drop-list li:not(:last-child) {
-        border-bottom: 1px solid #b3b3b3;
-    }
-    
-    .drop-list li {
-        height: 4.6rem;
-        line-height: 4.6rem;
-        padding: 0 1rem;
-    }
-    
-    .drop-list li .pull-right {
-        color: #989898;
-    }
-    /*排行*/
-    
-    .rank-box main {
-        margin: 1.35rem;
-    }
-    
-    .rank-box main > div {
-        margin-top: 2rem;
-    }
-    
-    .rank-box .tab-box {
-        display: flex;
-        height: 3.5rem;
-        color: #2a97ff;
-        border: 1px solid #34acea;
-        border-radius: .5rem;
-        text-align: center;
-        line-height: 3.5rem;
-    }
-    
-    .rank-box .tab-box li {
-        border-right: 1px solid #34acea;
-        font-size: 1.4rem;
-        flex: 1;
-    }
-    
-    .rank-box .tab-box li:last-child {
-        border: 0;
-    }
-    
-    .tab-box .cur {
-        background-color: #34acea;
-        color: #ffffff;
-    }
-    /*今日拜访*/
-    
-    .visit-box {
-        background-color: #F7F7F7;
-    }
-    
-    .visit-box nav {
-        border-bottom: 1px solid #cccccc;
-    }
-    
-    .visit-box nav > ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 9.25rem;
-        background-color: #ffffff;
-        color: #343434;
-        font-size: 1.3rem;
-    }
-    
-    .visit-box nav > ul img {
-        width: 30%;
-    }
-    
-    .visit-box nav > ul li {
-        flex: 1;
-        text-align: center;
-    }
-    
-    .visit-box nav > ul li > div:first-child {
-        height: 3.5rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .visit-box nav > ul li:last-child > div:first-child {
-        height: 4rem;
-        margin-bottom: 1.6rem;
-        margin-top: -.6rem;
-    }
-    
-    .visit-box nav > ul li:first-child img {
-        width: 40%;
-    }
-    
-    .visit-box .terminal-box {
-        margin-top: 1rem;
-        background-color: #ffffff;
-    }
-    
-    .terminal-list .pull-left > p:first-child > span:first-child {
-        margin-right: 1rem;
-    }
-    
-    .terminal-list .tradition,
-    .terminal-list .promotion,
-    .terminal-list .modern,
-    .terminal-list .market {
-        color: #ffffff;
-        font-size: .9rem;
-        margin-right: .65rem;
-        padding: .5rem;
-        padding: .3rem;
-        border-radius: .3rem;
-    }
-    
-    .terminal-list .tradition {
-        background-color: #90caf9;
-    }
-    
-    .terminal-list .promotion {
-        background-color: #ff7b70;
-    }
-    
-    .terminal-list .modern {
-        background-color: #d4e157;
-    }
-    
-    .terminal-list .market {
-        background-color: #66bb6a;
-    }
-    
-    .visit-box .terminal-box .terminal-list .pull-right {
-        line-height: 3.6rem;
-    }
-    
-    .visit-box .pull-right > p:last-child {
-        font-size: 1.3rem;
-    }
-    
-    .visit-box .doing {
-        color: #2a97ff;
-    }
-    
-    .visit-box .undo {
-        color: #ff5b00;
-    }
-    
-    .visit-box .done {
-        color: #b2b2b2;
-    }
-    /*店面工作-拜访八步骤*/
-    
-    .visitstep-box nav > ul {
-        display: flex;
-        color: #8c8c8c;
-        font-size: 1.4rem;
-        padding: 1rem 0;
-        width: 95rem;
-        border-bottom: 1px solid #cccccc;
-    }
-    
-    .visitstep-box nav > ul > li {
-        padding: 0 2rem;
-    }
-    
-    .visitstep-box nav > ul > li:not(:last-child) {
-        border-right: 1px solid #b3b3b3;
-    }
-    
-    .visitstep-box nav > ul > li.cur {
-        color: #333333;
-    }
-    
-    .visitstep-box nav hr {
-        width: 9.7rem;
-        margin: 0;
-        border: .15rem solid #ff9550;
-        margin-top: -.2rem;
-        /* left: 9.6rem; */
-        position: absolute;
-    }
-    
-    .visitstep-box main > div {
-        margin: 1.1rem 2rem;
-        color: #404040;
-        font-size: 1.8rem;
-    }
-    
-    .visitstep-box h4 {
-        display: inline-block;
-    }
-    
-    .arrive-store img {
-        width: 25%;
-        margin: 1.25rem 0;
-    }
-    
-    .arrive-store ul li {
-        border-bottom: 1px solid #cccccc;
-    }
-    
-    .arrive-store ul li:not(:first-child) {
-        height: 6rem;
-        line-height: 3rem;
-    }
-    
-    .arrive-store ul li:not(:first-child) h4 {
-        color: #404040;
-        font-size: 1.6rem;
-    }
-    
-    .arrive-store ul li:not(:first-child) p {
-        color: #999999;
-        font-size: 1.6rem;
-    }
+@charset "utf-8";
+
+/*首页*/
+
+.submit-suc {
+    background-color: #050505;
+    border-radius: .5rem;
+    opacity: 0.7;
+    padding: 1.6rem;
+    font-size: 1.5rem;
+    color: #ffffff;
+    top: 66%;
+}
+
+
+/*关于页面*/
+
+.about-header {
+    padding-top: 4rem;
+    text-align: center;
+}
+
+.about-header img {
+    width: 7rem;
+    margin: 0 auto;
+}
+
+.about-header > div {
+    margin-top: 1.6rem;
+}
+
+.about-header h1 {
+    color: #404040;
+    font-size: 1.7rem;
+}
+
+.about-header h2 {
+    margin-top: .5rem;
+    color: #9a9a9a;
+    font-size: 1.5rem;
+}
+
+.about-tel {
+    margin-top: 2rem;
+}
+
+.about-vip {
+    margin-top: 1.5rem;
+}
+
+.about-tel h3,
+.about-vip h3 {
+    height: 2rem;
+    background-color: #efeff4;
+    color: #676767;
+    font-size: 1.3rem;
+    padding-left: 1rem;
+    line-height: 3rem;
+    height: 3rem;
+}
+
+.about-tel .cf {
+    font-size: 1.7rem;
+    margin: 0 2rem;
+}
+
+.about-tel .cf .pull-left {
+    color: #404040;
+}
+
+.about-tel .cf .pull-right {
+    color: #2a97ff;
+}
+
+.about-tel .cf > div > p {
+    margin-top: 1.6rem;
+}
+
+.about-vip p {
+    margin: 1.5rem 1.5rem 0;
+    color: #404040;
+    font-size: 1.5rem;
+}
+
+.about-vip p span {
+    display: block;
+}
+
+.about-vip p span:nth-child(2) {
+    margin-top: 1rem;
+}
+
+.about-vip input {
+    padding-left: 1rem;
+    height: 3rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+}
+
+.about-vip > div {
+    margin: .8rem 1.5rem;
+}
+
+.about-vip .btn {
+    color: #ffffff;
+    font-size: 2rem;
+    background-color: #94D201;
+    border-radius: .5rem;
+    margin-top: 2rem;
+    height: 4rem;
+    line-height: 3rem;
+    width: 100%;
+}
+
+
+/*选择角色页面*/
+
+.role-box {
+    padding: 3rem 1.8rem 2rem;
+}
+
+.role-box h3 > img {
+    width: 75%;
+}
+
+.role-box a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    border-radius: 1rem;
+    margin: 2.8rem auto 0;
+}
+
+.role-box a img {
+    width: 55%;
+}
+
+.role-box a > p {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.role-box a.blue > p {
+    background-color: #2da4e5;
+    color: #c0e3f7;
+}
+
+.role-box a.green > p {
+    background-color: #7eb300;
+    color: #d8e8b3;
+}
+
+.blue {
+    background-color: #3cbafc;
+}
+
+.green {
+    background-color: #94d201;
+}
+
+.role-box a.green {
+    margin-top: 2.5rem;
+}
+
+.role-box h4 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-top: -2.5rem;
+}
+
+
+/*选择行业页面*/
+
+.industry-box {
+    padding: 4rem 1.8rem;
+}
+
+.industry-box h3 > img {
+    width: 85%;
+}
+
+.industry-box > div {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.industry-box > div .row {
+    flex-basis: 100%;
+    display: flex;
+}
+
+.industry-box > div a {
+    flex: 1;
+    margin: 1rem 1.4rem;
+}
+
+.industry-box > div .row.two a {
+    flex: 0 0 23%;
+}
+
+.industry-box > div a > p {
+    color: #4d4d4d;
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+    margin-top: .5rem;
+}
+
+
+/*功能列表页面*/
+
+.feature-box li {
+    padding: .8rem 1.2rem .4rem;
+}
+
+.feature-foot h5 {
+    font-size: 1rem;
+}
+
+.feature-box img {
+    width: 14.6%;
+    position: absolute;
+}
+
+.feature-box a {
+    display: block;
+}
+
+.feature-box a > div {
+    display: inline-block;
+    margin-left: 19%;
+    border-bottom: 1px solid #cccccc;
+    width: 84%;
+    line-height: 2.5rem;
+    height: 5rem;
+}
+
+.feature-box h4 {
+    color: #404040;
+    font-size: 1.6rem;
+}
+
+.feature-box p {
+    color: #999999;
+    font-size: 1.3rem;
+}
+
+.feature-foot {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #f9f9f9;
+    border-top: 1px solid #cccccc;
+    height: 4.9rem;
+    width: 100%;
+}
+
+.feature-foot a {
+    display: inline-block;
+}
+
+.feature-foot img {
+    width: 3.5rem;
+}
+
+.feature-foot > div {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    color: #7c7d81;
+    font-size: .5rem;
+}
+
+.feature-foot > div > .cur {
+    color: #56a1ee;
+}
+
+.feature-foot > div > .work-foot {
+    margin-right: 12rem;
+}
+
+
+/*签到页面*/
+
+.picture-box,
+.orientation-box {
+    border-bottom: 1px solid #ccc;
+}
+
+.picture-box img {
+    width: 23rem;
+}
+
+.picture-box > h3,
+.orientation-box > h3 {
+    padding: 1.5rem 2rem 1rem;
+    font-size: 1.7rem;
+}
+
+.picture-box > div {
+    background-color: #f8c753;
+    height: 16rem;
+    border-radius: .6rem;
+    margin: 0 1.8rem 2rem;
+    text-align: right;
+}
+
+.orientation-box > div {
+    margin: 0 1.8rem 1.2rem;
+}
+
+.orientation-box img {
+    width: 7.5rem;
+}
+
+.location-content {
+    margin-left: .5rem;
+    width: 68%;
+    height: 5.8rem;
+}
+
+.orientation-box p:first-of-type {
+    height: 5.5rem;
+    font-size: 1.6rem;
+    color: #333333;
+}
+
+.location-content .pull-left {
+    color: #999999;
+    font-size: 1.6rem;
+}
+
+.location-content .pull-right {
+    color: #2a97ff;
+    font-size: 1.6rem;
+}
+
+.check-box .btn-box {
+    margin: 1rem 2rem;
+}
+
+.check-box .btn-box .btn {
+    width: 46%;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 1.8rem;
+    border-radius: .5rem;
+    height: 4.5rem;
+    padding: 1rem;
+}
+
+.check-box .btn-box .btn:first-of-type {
+    background-color: #3cbaff;
+    margin-right: 1.5rem;
+}
+
+.check-box .btn-box .btn:last-of-type {
+    background-color: #515ca5;
+}
+
+.check-box .btn-box .btn img {
+    width: 3rem;
+}
+
+
+/**附近终端页面**/
+
+#allmap .BMapLabel {
+    padding: 10px 10px !important;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #333;
+    border-color: #cccccc !important;
+}
+
+#terminalDetail {
+    display: flex;
+    height: 10rem;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: #FFFFFF;
+    opacity: 0.9;
+}
+
+#terminalDetail .terminal-info {
+    flex: 1;
+}
+
+#terminalDetail .terminal-info > div {
+    margin: 1.5rem;
+    line-height: 2rem;
+}
+
+#terminalDetail .terminal-info > div h5 {
+    color: #404040;
+    font-size: 1.6rem;
+    height: 2.5rem;
+}
+
+#terminalDetail .terminal-info > div p {
+    color: #8c8c8c;
+    font-size: 1.2rem;
+    height: 2.5rem;
+    overflow: hidden;
+    line-height: 2.5rem;
+}
+
+#terminalDetail .terminal-link a {
+    width: 8rem;
+    color: #2a97ff;
+    font-size: 1.6rem;
+}
+
+
+/**增加终端页面*/
+
+.addterminal-box {
+    color: #333333;
+    font-size: 1.6rem;
+    padding: 1.3rem 2rem;
+}
+
+.addterminal-box li {
+    position: relative;
+    height: 3rem;
+    line-height: 2rem;
+    margin-bottom: 1.1rem;
+}
+
+li > label {
+    width: 9rem;
+    display: inline-block;
+    border-right: .1rem solid #b3b3b3;
+    position: absolute;
+    color: #404040;
+    font-size: 1.6rem;
+}
+
+li > label > i {
+    margin: .5rem;
+}
+
+.addterminal-box input,
+.addterminal-box select,
+.addterminal-box textarea {
+    padding: 0 2.5rem 0 10.5rem;
+    border: 0;
+    border-bottom: .1rem solid #cccccc;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 1rem;
+    font-size: 1.6rem;
+    color: #8c8c8c;
+}
+
+.addterminal-box select {
+    padding-right: 1.5rem;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url("image/select.png") no-repeat scroll right center transparent;
+    background-size: 1.5rem 1rem;
+}
+
+.addterminal-box textarea {
+    resize: none;
+    font-size: 2rem;
+    color: #8c8c8c;
+}
+
+.addterminal-box select > option {
+    text-indent: 2rem;
+}
+
+.addterminal-box li.orientation {
+    height: 12rem;
+    border-bottom: 1px solid #cccccc;
+}
+
+.qrcode-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2.3rem;
+}
+
+.lock-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.3rem;
+}
+
+.addterminal-box .orientation-box {
+    border: 0;
+}
+
+.addterminal-box .orientation-box h3 {
+    padding: 0 0 1rem 0;
+}
+
+.addterminal-box .orientation-box > div {
+    margin-left: 0;
+}
+
+.addterminal-box li.orientation {
+    margin-bottom: 0;
+}
+
+.addterminal-box li.address {
+    height: 6.7rem;
+}
+
+
+/*我的终端列表*/
+
+.search-wrap {
+    background-color: #ebeced;
+    height: 4rem;
+    padding: .6rem;
+}
+
+.search-box {
+    background-color: #ffffff;
+    color: #8e8e93;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    height: 2.8rem;
+    padding-left: 1rem;
+    line-height: 2.5rem;
+}
+
+.search-box input {
+    border: 0;
+    height: 2rem;
+    font-size: 1.5rem;
+    width: 85%;
+}
+
+.search-box img {
+    width: 1.5rem;
+}
+
+.terminal-list li {
+    border-bottom: 1px solid #cccccc;
+    padding: .8rem 1.8rem;
+}
+
+.terminal-list li > div {
+    display: inline-block;
+}
+
+.terminal-list li p:first-of-type {
+    color: #404040;
+    font-size: 1.6rem;
+}
+
+.terminal-list li p {
+    color: #8c8c8c;
+    font-size: 1.2rem;
+}
+
+.terminal-list li span {
+    color: #343434;
+    font-size: 1.6rem;
+}
+
+.terminal-list .pull-left {
+    line-height: 1.9rem;
+}
+
+.terminal-list .pull-left span {
+    margin-right: .5rem;
+}
+
+.terminal-list .pull-right {
+    line-height: 6.2rem;
+    height: 6.2rem;
+}
+
+.terminal-list .pull-left img {
+    width: 1rem;
+}
+
+.terminal-list .pull-right img {
+    margin-right: 1rem;
+    width: 1.1rem;
+}
+
+
+/*业务员-业绩*/
+
+
+/**功能列表*/
+
+.performlist-box {
+    padding: 3rem 1rem 8rem;
+    height: 100%;
+    text-align: center;
+}
+
+.performlist-box img {
+    height: 100%;
+}
+
+.performlist-box ul {
+    opacity: 0;
+    position: absolute;
+    top: 3rem;
+    left: 1rem;
+    height: 85%;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+}
+
+.performlist-box ul li:first-child {
+    height: 40%;
+    display: flex;
+}
+
+.performlist-box ul li:first-child a {
+    flex: 1;
+}
+
+.performlist-box ul li:not(:first-child) {
+    flex: 1;
+    margin-top: 1rem;
+}
+
+.performlist-box ul li:not(:first-child) > a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*我的订单*/
+
+.salesvolumn-box .require-box {
+    height: 4rem;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    background-color: #ebeced;
+    font-size: 1.3rem;
+    color: #343434;
+    line-height: 2rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.salesvolumn-box .require-box > ul {
+    display: flex;
+}
+
+.salesvolumn-box .require-box > ul > li {
+    flex: 1;
+}
+
+.salesvolumn-box .require-box > ul > li:first-child {
+    border-right: 1px solid #cccccc;
+}
+
+.salesvolumn-box .require-box > ul > li img {
+    width: 5%;
+}
+
+.salesvolumn-box .require-box > ul > li > span:first-child img {
+    width: 10%;
+}
+
+.salesvolumn-box .require-box > ul > li > span.icon img {
+    margin-bottom: .3rem;
+}
+
+.salesvolumn-box .require-box > ul > li > span:not(.icon) {
+    margin: 0 .5rem;
+}
+
+.orderlist-box > div {
+    color: #8d8d8d;
+    font-size: 1.1rem;
+    height: 3rem;
+    line-height: 3rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ebeced;
+    padding-left: 1.35rem
+}
+
+.order-header,
+.order-content {
+    background-color: #edeef0;
+    font-size: 1.1rem;
+    color: #333333;
+    display: flex;
+    text-align: center;
+}
+
+.order-header {
+    background-color: #edeef0;
+    height: 4.5rem;
+    line-height: 4.5rem;
+}
+
+.order-header li,
+.order-content li {
+    flex: 1;
+}
+
+.order-header li:not(:last-child),
+.order-content li > ul > li:not(:last-child) {
+    border-right: 1px solid #d9d9d9;
+}
+
+.order-content li > ul > li {
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.order-content {
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+.order-content ul {
+    display: flex;
+    height: 4.5rem;
+    line-height: 4.5rem;
+}
+
+.drop-list {
+    position: relative;
+    background: #ffffff;
+    box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.7);
+    width: 28rem;
+    border-radius: 1rem;
+    color: #333333;
+    font-size: 1.3rem;
+    top: 1rem;
+    left: 1rem;
+}
+
+.drop-list img {
+    position: absolute;
+    top: -2rem;
+    width: 10%;
+    left: 4rem;
+}
+
+.drop-list li:not(:last-child) {
+    border-bottom: 1px solid #b3b3b3;
+}
+
+.drop-list li {
+    height: 4.6rem;
+    line-height: 4.6rem;
+    padding: 0 1rem;
+}
+
+.drop-list li .pull-right {
+    color: #989898;
+}
+
+
+/*排行*/
+
+.rank-box main {
+    margin: 1.35rem;
+}
+
+.rank-box main > div {
+    margin-top: 2rem;
+}
+
+.rank-box .tab-box {
+    display: flex;
+    height: 3.5rem;
+    color: #2a97ff;
+    border: 1px solid #34acea;
+    border-radius: .5rem;
+    text-align: center;
+    line-height: 3.5rem;
+}
+
+.rank-box .tab-box li {
+    border-right: 1px solid #34acea;
+    font-size: 1.4rem;
+    flex: 1;
+}
+
+.rank-box .tab-box li:last-child {
+    border: 0;
+}
+
+.tab-box .cur {
+    background-color: #34acea;
+    color: #ffffff;
+}
+
+
+/*今日拜访*/
+
+.visit-box {
+    background-color: #F7F7F7;
+}
+
+.visit-box nav {
+    border-bottom: 1px solid #cccccc;
+}
+
+.visit-box nav > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 9.25rem;
+    background-color: #ffffff;
+    color: #343434;
+    font-size: 1.3rem;
+}
+
+.visit-box nav > ul img {
+    width: 30%;
+}
+
+.visit-box nav > ul li {
+    flex: 1;
+    text-align: center;
+}
+
+.visit-box nav > ul li > div:first-child {
+    height: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.visit-box nav > ul li:last-child > div:first-child {
+    height: 4rem;
+    margin-bottom: 1.6rem;
+    margin-top: -.6rem;
+}
+
+.visit-box nav > ul li:first-child img {
+    width: 40%;
+}
+
+.visit-box .terminal-box {
+    margin-top: 1rem;
+    background-color: #ffffff;
+}
+
+.terminal-list .pull-left > p:first-child > span:first-child {
+    margin-right: 1rem;
+}
+
+.terminal-list .tradition,
+.terminal-list .promotion,
+.terminal-list .modern,
+.terminal-list .market {
+    color: #ffffff;
+    font-size: .9rem;
+    margin-right: .65rem;
+    padding: .5rem;
+    padding: .3rem;
+    border-radius: .3rem;
+}
+
+.terminal-list .tradition {
+    background-color: #90caf9;
+}
+
+.terminal-list .promotion {
+    background-color: #ff7b70;
+}
+
+.terminal-list .modern {
+    background-color: #d4e157;
+}
+
+.terminal-list .market {
+    background-color: #66bb6a;
+}
+
+.visit-box .terminal-box .terminal-list .pull-right {
+    line-height: 3.6rem;
+}
+
+.visit-box .pull-right > p:last-child {
+    font-size: 1.3rem;
+}
+
+.visit-box .doing {
+    color: #2a97ff;
+}
+
+.visit-box .undo {
+    color: #ff5b00;
+}
+
+.visit-box .done {
+    color: #b2b2b2;
+}
+
+
+/*店面工作-拜访八步骤*/
+
+.visitstep-box nav {
+    overflow: hidden;
+    position: fixed;
+    background: #ffffff;
+    z-index: 2;
+}
+
+.visitstep-box nav h3 {
+    font-size: 1.4rem;
+    padding: .2rem 2rem;
+}
+
+.visitstep-box nav > ul {
+    display: flex;
+    color: #8c8c8c;
+    font-size: 1.4rem;
+    width: 95rem;
+    border-bottom: 1px solid #cccccc;
+}
+
+.visitstep-box nav > ul > li {
+    padding: 1rem 0;
+}
+
+.visitstep-box nav > ul > li.cur {
+    color: #333333;
+    border-bottom: .2rem solid #ff9550;
+}
+
+.visitstep-box nav > ul > li:not(:last-child) h3 {
+    border-right: 1px solid #b3b3b3;
+}
+
+.visitstep-box main {
+    padding-top: 4.5rem;
+}
+
+.visitstep-box main > div {
+    margin: 0 2rem;
+    color: #404040;
+    font-size: 1.8rem;
+}
+
+.visitstep-box h4 {
+    display: inline-block;
+    font-size: 1.6rem;
+}
+
+.arrive-store img,
+.check-store img {
+    width: 20%;
+    margin: 1rem 0 0;
+}
+
+.arrive-store ul li,
+.check-store ul li {
+    border-bottom: 1px solid #cccccc;
+    padding: 1rem 0;
+}
+
+.arrive-store ul li:not(:first-child) {
+    height: 5rem;
+    line-height: 2.5rem;
+}
+
+.arrive-store ul li:not(:first-child) h4 {
+    color: #404040;
+    font-size: 1.6rem;
+}
+
+.arrive-store ul li:not(:first-child) p {
+    color: #999999;
+    font-size: 1.6rem;
+}
+
+.check-store .input-box {
+    padding-bottom: 0;
+}
+
+.check-store label {
+    width: 11rem;
+}
+
+.check-store input {
+    padding: 0 2.5rem 0 12.5rem;
+    border: 0;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 1rem;
+    font-size: 1.6rem;
+    color: #8c8c8c;
+}
+
+.visitstep-box .distribute-box,
+.visitstep-box .order-manage {
+    margin: 0;
+}
+
+.visitstep-box .distribute-box .search-box span img {
+    width: 2rem;
+}
+
+.visitstep-box .distribute-box>div>ul,
+.visitstep-box .order-manage>div>ul {
+    padding: 0 2rem;
+    color: #404040;
+    font-size: 1.6rem;
+}
+
+.visitstep-box .distribute-box>div>ul>li,
+.visitstep-box .order-manage>div>ul>li {
+    border-bottom: 1px solid #cccccc;
+    line-height: 4.4rem;
+}
+
+.triangle-right>img {
+    width: 2.5%;
+}
+
+.triangle-down>img {
+    width: 3.5%;
+}
+
+.visitstep-box .distribute-box .addterminal-box,
+.visitstep-box .order-manage .addterminal-box {
+    background-color: #f2f2f2;
+    border-bottom: 0;
+}
+
+.visitstep-box .distribute-box .addterminal-box input,
+.visitstep-box .order-manage .addterminal-box input {
+    background-color: #f2f2f2;
+}
+
+.visitstep-box .order-manage .search-wrap {
+    display: flex;
+}
+
+.visitstep-box .order-manage .search-wrap .search-box {
+    width: 75%;
+}
+
+.visitstep-box .order-manage .search-wrap select {
+    margin: 0 1.25rem;
+    line-height: 2.8rem;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url("image/pulldown.png") no-repeat scroll right center transparent;
+    border: 0;
+    padding-right: 2rem;
+    font-size: 1.4rem;
+    background-size: 1.5rem 1rem;
+}
+
+.visit-summary > div {
+    display: block;
+    font-size: 1.6rem;
+    height: 5rem;
+    line-height: 5rem;
+}
+
+.visit-summary textarea {
+    resize: none;
+    font-size: 1.8rem;
+    color: #8c8c8c;
+}

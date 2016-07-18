@@ -87,8 +87,22 @@ define([], function() {
         $(this).parents('main').find('img').addClass('hide').end().find('img').eq(index).removeClass('hide');
     })
 
+    //点击拜访八步骤的tab切换步骤
+    $('body').on('click', '.visitstep-box nav li', function(e) {
+        if ($(this).hasClass('cur')) return;
+        var index = $(this).index();
+        $(this).parents('ul').find('li').removeClass('cur');
+        $(this).addClass('cur');
+        $(this).parents('.visitstep-box').find('main .visit-content').addClass('hide').end().find('.visit-content').eq(index).removeClass('hide');
+    });
+
+    /*$('body').on('touchstart', '.visitstep-box nav', function(e) {
+        $('.visitstep-box nav').css('left', $())
+    })*/
+
     return {
-        showSubmitSuc: showSubmitSuc
+        showSubmitSuc: showSubmitSuc,
+        getUrlParams: getUrlParams
     }
 
 })

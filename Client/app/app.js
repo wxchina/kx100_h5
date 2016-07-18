@@ -4,8 +4,8 @@ description: 根据hash确定需要填充到页面主体的内容，并且绑定
 */
 define([
     "public/util.js",
-    "public/date.js",
     "module/module.min.js",
+    "public/date.js",
     "qing.js"
 ], function(u, m) {
 
