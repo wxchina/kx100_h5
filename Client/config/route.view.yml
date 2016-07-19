@@ -123,4 +123,25 @@ salesman-performance:
     enableroute: true
     responetype: 'html'
     authorized: true
-    physical_file: 'salesman/performance/terminalactivity.html'        
+    physical_file: 'salesman/performance/terminalactivity.html'
+  - httpmethod: 'get'
+    routepath: '/view/yzj/salesman/performance/visitreview'
+    description: '拜访回顾'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'salesman/performance/visitreview.html'   
+  - httpmethod: 'get'
+    routepath: '/view/yzj/salesman/performance/relateterminal'
+    description: '关联终端'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'salesman/performance/relateterminal.html' 
+  - httpmethod: 'get'
+    routepath: '/view/yzj/salesman/performance/activedetail'
+    description: '终端活跃度明细'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'salesman/performance/activedetail.html'          

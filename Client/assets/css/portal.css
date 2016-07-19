@@ -645,7 +645,7 @@ li > label > i {
 
 /*我的订单*/
 
-.salesvolumn-box .require-box {
+.require-box {
     height: 4rem;
     border-top: 1px solid #cccccc;
     border-bottom: 1px solid #cccccc;
@@ -657,31 +657,31 @@ li > label > i {
     padding: 1rem;
 }
 
-.salesvolumn-box .require-box > ul {
+.require-box > ul {
     display: flex;
 }
 
-.salesvolumn-box .require-box > ul > li {
+.require-box > ul > li {
     flex: 1;
 }
 
-.salesvolumn-box .require-box > ul > li:first-child {
+.require-box > ul > li:first-child {
     border-right: 1px solid #cccccc;
 }
 
-.salesvolumn-box .require-box > ul > li img {
+.require-box > ul > li img {
     width: 5%;
 }
 
-.salesvolumn-box .require-box > ul > li > span:first-child img {
+.require-box > ul > li > span:first-child img {
     width: 10%;
 }
 
-.salesvolumn-box .require-box > ul > li > span.icon img {
+.require-box > ul > li > span.icon img {
     margin-bottom: .3rem;
 }
 
-.salesvolumn-box .require-box > ul > li > span:not(.icon) {
+.require-box > ul > li > span:not(.icon) {
     margin: 0 .5rem;
 }
 
@@ -834,7 +834,7 @@ li > label > i {
     text-align: center;
 }
 
-.visit-box nav > ul li > div:first-child {
+.visit-box nav > ul li > a > div:first-child {
     height: 3.5rem;
     margin-bottom: 1.5rem;
 }
@@ -1075,4 +1075,175 @@ li > label > i {
     resize: none;
     font-size: 1.8rem;
     color: #8c8c8c;
+}
+
+
+/*拜访回顾*/
+
+.simple-list > li {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.simple-list li > div:first-child {
+    width: 25rem;
+}
+
+.simple-list li {
+    border-bottom: 1px solid #cccccc;
+    padding: .8rem 1.8rem;
+    line-height: 2.5rem;
+}
+
+.simple-list li h4,
+.simple-list li h4 > span:first-child {
+    color: #404040;
+    font-size: 1.6rem;
+}
+
+.simple-list li p,
+.simple-list li span {
+    color: #8c8c8c;
+    font-size: 1.2rem;
+}
+
+
+/*我的促销*/
+
+.pink {
+    background-color: #ff7b70;
+}
+
+.peakgreen {
+    background-color: #d4e157;
+}
+
+.flag {
+    color: #ffffff !important;
+    font-size: 1rem !important;
+    margin: 0 .75rem !important;
+    padding: .3rem !important;
+    border-radius: .3rem !important;
+}
+
+.simple-list li > div:first-child > p:nth-child(2) {
+    color: #999999;
+}
+
+.simple-list li > div:first-child > p:nth-child(3) {
+    color: #b3b3b3;
+}
+
+.simple-list li > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.promotion-list li > div:nth-child(2) > span {
+    color: #ff8000;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.promotion-list li > div:nth-child(2) > img {
+    width: 50%;
+}
+
+.promotion-list li > div:first-child {
+    width: 28rem;
+}
+
+.img-up {
+    -moz-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+}
+
+.promotion-list .unfold {
+    width: 100%;
+}
+
+.promotion-list .unfold > ul {
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f2;
+}
+
+.promotion-list .unfold > ul > li:first-child,
+.promotion-list .unfold > ul > li:nth-child(2) {
+    padding: 0;
+    display: flex;
+}
+
+.promotion-list .unfold > ul > li:first-child > h4,
+.promotion-list .unfold > ul > li:nth-child(2) > p {
+    padding: .8rem 1.8rem;
+    color: #343434;
+    font-size: 1.6rem;
+}
+
+.promotion-list .unfold > ul > li:first-child > h4:first-child,
+.promotion-list .unfold > ul > li:nth-child(2) > p:first-child {
+    border-right: 1px solid #cccccc;
+    width: 7rem;
+}
+
+.promotion-list .unfold > ul > li:last-child > a {
+    display: flex;
+}
+
+.promotion-list .unfold > ul > li:last-child h4 {
+    width: 27rem;
+}
+
+.promotion-list .unfold > ul > li:last-child img {
+    width: 50%;
+}
+
+.img-right {
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+}
+
+
+/*关联终端*/
+
+.relate-terminal .simple-list h4 {
+    width: 29rem;
+}
+
+.relate-terminal .simple-list p {
+    font-size: 1.4rem;
+}
+
+
+/*终端活跃度*/
+
+.active-detail > ul li > img {
+    width: 10%;
+    position: absolute;
+}
+
+.active-detail > ul li {
+    padding: 1rem;
+}
+
+.active-detail > ul li > div {
+    border-bottom: 1px solid #cccccc;
+    margin-left: 5rem;
+    line-height: 2rem;
+}
+
+.active-detail > ul li > div > h4 {
+    color: #404040;
+    font-size: 1.6rem;
+}
+
+.active-detail > ul li > div > p {
+    color: #8c8c8c;
+    font-size: 1.2rem;
+}
+
+.active-detail > ul li > div > p > img {
+    width: 1rem;
 }
