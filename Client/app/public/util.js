@@ -72,10 +72,13 @@ define([], function() {
     $('body').on('click', '.dropdown-box', function() {
         $(this).closest('div').find('.drop-list').removeClass('hide');
     })
+    $('body').on('click', '.drop-list li', function() {
+        $(this).parents('.drop-list').addClass('hide');
+    })
 
     //点击日历区域
-    $('body').on('click', '.calendar-box', function() {
-        $(this).date({ theme: "date" });
+    $('body').on('click', '.calendar-box, .active-box p', function() {
+        $(this).date({ theme: "date", $select: $(this).closest('div') });
     })
 
     //点击排名的tab进行切换
@@ -96,9 +99,6 @@ define([], function() {
         $(this).parents('.visitstep-box').find('main .visit-content').addClass('hide').end().find('.visit-content').eq(index).removeClass('hide');
     });
 
-    /*$('body').on('touchstart', '.visitstep-box nav', function(e) {
-        $('.visitstep-box nav').css('left', $())
-    })*/
 
     return {
         showSubmitSuc: showSubmitSuc,

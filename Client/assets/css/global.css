@@ -396,331 +396,113 @@ textarea:focus {
 }
 
 
-/*body,
-div,
-ul,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-form,
-fieldset,
-input,
-textarea,
-p,
-blockquote,
-th,
-td {
-    padding: 0;
-    margin: 0;
-}
+/*日历样式*/
 
-ul,
-li {
-    list-style: none;
-    list-style-type: none;
-}
-
-.page {
-    display: none;
+#datePlugin {
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
+    top: 7rem;
+}
+
+.calendar-content {
+    position: relative;
+    background: #ffffff;
+    box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.7);
+    width: 30rem;
+    border-radius: 1rem;
+    color: #333333;
+    font-size: 1.3rem;
+    top: 2rem;
+    left: 0rem;
+    font-size: 2rem;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    z-index: 999;
+}
+
+.calendar-content > img {
+    position: absolute;
+    top: -2.2rem;
+    width: 10%;
+    left: 22rem;
+}
+
+.calendar-content .selected-content {
+    padding: 1rem 0;
+}
+
+.calendar-content .calendar-list,
+.calendar-content .selected-content,
+.calendar-content .calendar-foot {
+    display: flex;
+}
+
+.calendar-content .selected-content > p {
+    position: relative;
+}
+
+.calendar-content .calendar-list >div,
+.calendar-content .selected-content > p,
+.calendar-content .calendar-foot > div {
+    flex: 1;
+    text-align: center;
+}
+
+.calendar-content .selected-content > p > span {
+    display: block;
+}
+
+.calendar-content .selected-content > p > span:first-child {
+    color: #2a97ff;
+}
+
+.calendar-content .selected-content > p > span:last-child {
+    color: #8c8c8c;
+    font-size: 1.1rem;
+}
+
+.calendar-content .calendar-list {
+    border-bottom: 1px solid #cccccc;
+    border-top: 1px solid #cccccc;
+    padding: 1rem;
+    height: 9.5rem;
     overflow: hidden;
 }
-*/
 
-
-/*JS代码网 - www.js-css.cn*/
-
-#datescroll div {
-    float: left;
-    margin-left: 10%;
-    margin-top: 15px;
-    padding-right: 22px;
+.calendar-content .calendar-list li {
+    height: 3.5rem;
+    font-size: 1.6rem;
+    line-height: 3.5rem;
 }
 
-#datescroll_datetime div {
-    float: left;
-    margin-left: 10%;
-    padding-right: 22px;
+.calendar-content .calendar-foot > div:first-child {
+    border-right: 1px solid #cccccc;
 }
 
-#yearwrapper {
+.calendar-content .calendar-foot > div:last-child {
+    color: #2a97ff;
+}
+
+.calendar-content .calendar-foot > div {
+    line-height: 4rem;
+}
+
+.calendar-content .selected-content .cur:before {
+    content: "";
+    background-image: url("image/orange-right.png");
+    background-size: 1rem;
+    width: 1rem;
+    height: 1rem;
     position: absolute;
-    left: 0;
-    top: 45px;
-    bottom: 60px;
-    width: 80%;
+    left: 0.5rem;
+    top: 0.5rem;
 }
 
-#monthwrapper {
+.calendar-content .selected-content .cur:after {
+    content: "";
+    background-image: url("image/orange-left.png");
+    background-size: 1rem;
+    width: 1rem;
+    height: 1rem;
     position: absolute;
-    left: 26%;
-    top: 45px;
-    bottom: 60px;
-    width: 80%;
+    left: 12rem;
+    bottom: 2.5rem;
 }
-
-#daywrapper {
-    position: absolute;
-    left: 50%;
-    top: 45px;
-    bottom: 60px;
-    width: 80%;
-}
-
-#Hourwrapper {
-    position: absolute;
-    left: 0;
-    top: 195px;
-    bottom: 68px;
-    width: 80%;
-}
-
-#Minutewrapper {
-    position: absolute;
-    left: 26%;
-    top: 195px;
-    bottom: 68px;
-    width: 80%;
-}
-
-#Secondwrapper {
-    position: absolute;
-    left: 50%;
-    top: 195px;
-    bottom: 68px;
-    width: 80%;
-}
-
-
-/*增加手指滑动触摸面积*/
-
-#Hourwrapper ul li {
-    color: #898989;
-    font-size: 12px;
-}
-
-#Minutewrapper ul li {
-    color: #898989;
-    font-size: 12px;
-}
-
-#Secondwrapper ul li {
-    color: #898989;
-    font-size: 12px;
-}
-
-#yearwrapper ul li {
-    color: #898989;
-    font-size: 12px;
-}
-
-#monthwrapper ul li {
-    color: #898989;
-    font-size: 12px;
-}
-
-#daywrapper ul li {
-    color: #898989;
-    font-size: 12px;
-}
-
-#markyear {
-    position: relative;
-    margin-left: 76px;
-    top: -2px;
-}
-
-#markmonth {
-    position: relative;
-    margin-left: 40px;
-    top: -2px;
-}
-
-#markday {
-    position: relative;
-    margin-left: 42px;
-    top: -2px;
-}
-
-#markhour {
-    position: relative;
-    margin-left: 62px;
-    top: -2px;
-}
-
-#markminut {
-    position: relative;
-    margin-left: 58px;
-    top: -2px;
-}
-
-#marksecond {
-    position: relative;
-    margin-left: 68px;
-    top: -2px;
-}
-
-#dateheader {
-    width: 100%;
-    height: 50px;
-    background: #79C12F;
-    text-align: center;
-    color: #fff;
-    line-height: 50px;
-    font-size: 20px;
-}
-
-#setcancle ul {
-    text-align: center;
-    line-height: 30px;
-    margin: 1px auto;
-    font-size: 20px;
-}
-
-#setcancle ul li {
-    border-radius: 3px;
-    float: left;
-    width: 40%;
-    height: 30px;
-    list-style-type: none;
-    font-family: 'microsoft yahei';
-    font-size: 16px;
-}
-
-#dateconfirm {
-    position: absolute;
-    background: #79C12F;
-    left: 20px;
-    color: #fff;
-}
-
-#datecancle {
-    position: absolute;
-    background: #dcdddd;
-    right: 20px;
-    width: 40%;
-    color: #666;
-}
-
-#dateshadow {
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: #000;
-    filter: alpha(Opacity=50);
-    -moz-opacity: 0.5;
-    opacity: 0.5;
-}
-
-#datePage {
-    font-size: 22px;
-    border-radius: 3px;
-    position: absolute;
-    top: 110px;
-    MARGIN-RIGHT: auto;
-    vertical-align: middle;
-    MARGIN-LEFT: auto;
-    width: 80%;
-    ;
-    height: 240px;
-    background: #FFFFFF;
-    z-index: 9999999;
-}
-
-#datetitle {
-    width: 100%;
-    height: 50px;
-    background: #79C12F;
-    text-align: center;
-    color: #fff;
-    line-height: 50px;
-    font-size: 20px;
-    font-family: 'microsoft yahei';
-}
-
-#datetitle h1 {
-    font-weight: normal;
-}
-
-#datemark {
-    font-size: 18px;
-    left: 5%;
-    width: 90%;
-    height: 20px;
-    position: absolute;
-    top: 108px;
-    background: #eee;
-    border: 1px solid #eee;
-}
-
-#timemark {
-    font-size: 18px;
-    left: 5%;
-    width: 90%;
-    height: 20px;
-    position: absolute;
-    top: 242px;
-    background: #eee;
-    border: 1px solid #eee;
-}
-
-#datescroll {
-    background: #F8F8F8;
-    width: 94%;
-    margin: 10px 3%;
-    border: 1px solid #E0E0E0;
-    border-radius: 4px;
-    height: 120px;
-    text-align: center;
-    line-height: 40px;
-}
-
-#datescroll_datetime {
-    display: none;
-    background: #F8F8F8;
-    width: 94%;
-    margin: 10px 3%;
-    margin-top: 10px;
-    border: 1px solid #E0E0E0;
-    border-radius: 4px;
-    height: 120px;
-    text-align: center;
-    line-height: 40px;
-}
-
-#yearwrapper ul,
-#monthwrapper ul,
-#daywrapper ul {
-    width: 40%;
-}
-
-#Hourwrapper ul,
-#Minutewrapper ul,
-#Secondwrapper ul {
-    width: 40%;
-}
-
-#dateFooter {
-    width: 100%;
-    background: #fff;
-    height: 50px;
-    bottom: 0px;
-    position: absolute;
-}
-
-
-/*JS代码网 - www.js-css.cn*/

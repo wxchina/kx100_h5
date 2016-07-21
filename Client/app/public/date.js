@@ -1,87 +1,62 @@
 /* 
- * 日期插件
- * 滑动选取日期（年，月，日）
- * V1.1
+ * 滑动选取年月日
  */
 (function($) {
     $.fn.date = function(options, Ycallback, Ncallback) {
-        //插件默认选项
-        var that = $(this);
-        var docType = $(this).is('input');
-        var datetime = false;
-        var nowdate = new Date();
-        var indexY = 1,
-            indexM = 1,
-            indexD = 1;
-        var indexH = 1,
-            indexI = 1,
-            indexS = 0;
-        var initY = parseInt((nowdate.getYear() + "").substr(1, 2));
-        var initM = parseInt(nowdate.getMonth() + "") + 1;
-        var initD = parseInt(nowdate.getDate() + "");
-        var initH = parseInt(nowdate.getHours());
-        var initI = parseInt(nowdate.getMinutes());
-        var initS = parseInt(nowdate.getYear());
-        var yearScroll = null,
+
+        var that = $(this),
+            nowdate = new Date(),
+            indexY = 1, //当前选中的年份
+            indexM = 1, //当前选中的月份
+            indexD = 1, //当前选中的日期
+            initY = parseInt((nowdate.getYear() + "").substr(1, 2)),
+            initM = parseInt(nowdate.getMonth() + "") + 1,
+            initD = parseInt(nowdate.getDate() + ""),
+            yearScroll = null,
             monthScroll = null,
             dayScroll = null;
-        var HourScroll = null,
-            MinuteScroll = null,
-            SecondScroll = null;
+
+        //插件默认选项    
         $.fn.date.defaultOptions = {
-                beginyear: 2000, //日期--年--份开始
-                endyear: 2020, //日期--年--份结束
-                beginmonth: 1, //日期--月--份结束
-                endmonth: 12, //日期--月--份结束
-                beginday: 1, //日期--日--份结束
-                endday: 31, //日期--日--份结束
-                beginhour: 1,
-                endhour: 12,
-                beginminute: 00,
-                endminute: 59,
-                curdate: false, //打开日期是否定位到当前日期
-                theme: "date", //控件样式（1：日期，2：日期+时间）
-                mode: null, //操作模式（滑动模式）
-                event: "click", //打开日期插件默认方式为点击后后弹出日期 
-                show: true
-            }
-            //用户选项覆盖插件默认选项   
+            beginyear: 2000, //日期--年--份开始
+            endyear: 2020, //日期--年--份结束
+            beginmonth: 1, //日期--月--份结束
+            endmonth: 12, //日期--月--份结束
+            beginday: 1, //日期--日--份结束
+            endday: 31, //日期--日--份结束
+            curdate: false, //打开日期是否定位到当前日期
+            theme: "date", //控件样式（1：日期，2：日期+时间）
+            mode: null, //操作模式（滑动模式）
+            event: "click", //打开日期插件默认方式为点击后后弹出日期 
+            show: true
+        };
+
+        //用户选项覆盖插件默认选项   
         var opts = $.extend(true, {}, $.fn.date.defaultOptions, options);
-        if (opts.theme === "datetime") { datetime = true; }
-        createUL(); //动态生成控件显示的日期
-        init_iScrll(); //初始化iscrll
-        extendOptions(); //显示控件
-        that.blur();
-        if (datetime) {
-            showdatetime();
-            refreshTime();
-        }
+        //动态生成控件显示的日期
+        createUI();
+        //初始化时间
+        initUI();
+        //绑定事件
+        bindEvent();
+        //初始化iscrll
+        initIscroll();
+        //显示控件
+        extendOptions();
         refreshDate();
-        bindButton();
+
 
         function refreshDate() {
             yearScroll.refresh();
             monthScroll.refresh();
             dayScroll.refresh();
 
-            resetInitDete();
+            resetInitDate();
             yearScroll.scrollTo(0, initY * 40, 100, true);
             monthScroll.scrollTo(0, initM * 40 - 40, 100, true);
             dayScroll.scrollTo(0, initD * 40 - 40, 100, true);
         }
 
-        function refreshTime() {
-            HourScroll.refresh();
-            MinuteScroll.refresh();
-            SecondScroll.refresh();
-            if (initH > 12) { //判断当前时间是上午还是下午
-                SecondScroll.scrollTo(0, initD * 40 - 40, 100, true); //显示“下午”
-                initH = initH - 12 - 1;
-            }
-            HourScroll.scrollTo(0, initH * 40, 100, true);
-            MinuteScroll.scrollTo(0, initI * 40, 100, true);
-            initH = parseInt(nowdate.getHours());
-        }
 
         function resetIndex() {
             indexY = 1;
@@ -89,121 +64,66 @@
             indexD = 1;
         }
 
-        function resetInitDete() {
+        function resetInitDate() {
             if (opts.curdate) {
                 return false;
             } else if (that.val() === "") {
                 return false;
             }
-            initY = parseInt(that.val().substr(2, 2));
-            initM = parseInt(that.val().substr(5, 2));
-            initD = parseInt(that.val().substr(8, 2));
+            initY = that.val() ? parseInt(that.val().substr(2, 2)) : that.val();
+            initM = that.val() ? parseInt(that.val().substr(5, 2)) : that.val();
+            initD = that.val() ? parseInt(that.val().substr(8, 2)) : that.val();
         }
 
-        function bindButton() {
+        function bindEvent() {
             resetIndex();
-            $("#dateconfirm").unbind('click').click(function() {
-                var datestr = $("#yearwrapper ul li:eq(" + indexY + ")").html().substr(0, $("#yearwrapper ul li:eq(" + indexY + ")").html().length - 1) + "-" +
-                    $("#monthwrapper ul li:eq(" + indexM + ")").html().substr(0, $("#monthwrapper ul li:eq(" + indexM + ")").html().length - 1) + "-" +
-                    $("#daywrapper ul li:eq(" + Math.round(indexD) + ")").html().substr(0, $("#daywrapper ul li:eq(" + Math.round(indexD) + ")").html().length - 1);
-                if (datetime) {
-                    if (Math.round(indexS) === 1) { //下午
-                        $("#Hourwrapper ul li:eq(" + indexH + ")").html(parseInt($("#Hourwrapper ul li:eq(" + indexH + ")").html().substr(0, $("#Hourwrapper ul li:eq(" + indexH + ")").html().length - 1)) + 12)
-                    } else {
-                        $("#Hourwrapper ul li:eq(" + indexH + ")").html(parseInt($("#Hourwrapper ul li:eq(" + indexH + ")").html().substr(0, $("#Hourwrapper ul li:eq(" + indexH + ")").html().length - 1)))
-                    }
-                    datestr += " " + $("#Hourwrapper ul li:eq(" + indexH + ")").html().substr(0, $("#Minutewrapper ul li:eq(" + indexH + ")").html().length - 1) + ":" +
-                        $("#Minutewrapper ul li:eq(" + indexI + ")").html().substr(0, $("#Minutewrapper ul li:eq(" + indexI + ")").html().length - 1);
-                    indexS = 0;
-                }
-
-                if (Ycallback === undefined) {
-                    if (docType) { that.val(datestr); } else { that.html(datestr); }
-                } else {
-                    Ycallback(datestr);
-                }
-                $("#datePage").hide();
-                $("#dateshadow").hide();
+            $("#dateconfirm").click(function(e) {
+                e.stopPropagation();
+                $(".calendar-content").hide();
             });
-            $("#datecancle").click(function() {
-                $("#datePage").hide();
-                $("#dateshadow").hide();
-                Ncallback(false);
+            $("#datecancle").click(function(e) {
+                e.stopPropagation();
+                $(".calendar-content").hide();
             });
+            $('.selected-content').find('p').click(function(e) {
+                e.stopPropagation();
+                if ($(this).hasClass('cur')) return;
+                $(this).siblings().removeClass('cur');
+                $(this).addClass('cur');
+            })
         }
 
         function extendOptions() {
-            $("#datePage").show();
-            $("#dateshadow").show();
+            $(".calendar-content").show();
         }
         //日期滑动
-        function init_iScrll() {
-            var strY = $("#yearwrapper ul li:eq(" + indexY + ")").html().substr(0, $("#yearwrapper ul li:eq(" + indexY + ")").html().length - 1);
-            var strM = $("#monthwrapper ul li:eq(" + indexM + ")").html().substr(0, $("#monthwrapper ul li:eq(" + indexM + ")").html().length - 1)
+        function initIscroll() {
             yearScroll = new IScroll("#yearwrapper", {
-                snap: "li",
-                vScrollbar: false,
-                onScrollEnd: function() {
-                    indexY = (this.y / 40) * (-1) + 1;
-                    opts.endday = checkdays(strY, strM);
-                    $("#daywrapper ul").html(createDAY_UL());
-                    dayScroll.refresh();
-                }
+                snap: "li"
             });
             monthScroll = new IScroll("#monthwrapper", {
-                snap: "li",
-                vScrollbar: false,
-                onScrollEnd: function() {
-                    indexM = (this.y / 40) * (-1) + 1;
-                    opts.endday = checkdays(strY, strM);
-                    $("#daywrapper ul").html(createDAY_UL());
-                    dayScroll.refresh();
-                }
+                snap: "li"
             });
             dayScroll = new IScroll("#daywrapper", {
-                snap: "li",
-                vScrollbar: false,
-                onScrollEnd: function() {
-                    indexD = (this.y / 40) * (-1) + 1;
-                }
+                snap: "li"
             });
+
+            //滚动结束
+            yearScroll.on('scrollEnd', function() {
+                console.log(yearScroll.y);
+            });
+            monthScroll.on('scrollEnd', function() {
+                console.log(monthScroll.y);
+            });
+            dayScroll.on('scrollEnd', function() {
+                console.log(dayScroll.y);
+            });
+
         }
 
-        function showdatetime() {
-            init_iScroll_datetime();
-            addTimeStyle();
-            $("#datescroll_datetime").show();
-            $("#Hourwrapper ul").html(createHOURS_UL());
-            $("#Minutewrapper ul").html(createMINUTE_UL());
-            $("#Secondwrapper ul").html(createSECOND_UL());
-        }
-
-        //日期+时间滑动
-        function init_iScroll_datetime() {
-            HourScroll = new IScroll("#Hourwrapper", {
-                snap: "li",
-                vScrollbar: false,
-                onScrollEnd: function() {
-                    indexH = Math.round((this.y / 40) * (-1)) + 1;
-                    HourScroll.refresh();
-                }
-            })
-            MinuteScroll = new IScroll("#Minutewrapper", {
-                snap: "li",
-                vScrollbar: false,
-                onScrollEnd: function() {
-                    indexI = Math.round((this.y / 40) * (-1)) + 1;
-                    HourScroll.refresh();
-                }
-            })
-            SecondScroll = new IScroll("#Secondwrapper", {
-                snap: "li",
-                vScrollbar: false,
-                onScrollEnd: function() {
-                    indexS = Math.round((this.y / 40) * (-1));
-                    HourScroll.refresh();
-                }
-            })
+        function initUI() {
+            $('#datePlugin').find('.selected-content').find('p.start').find('span').eq(0).text(new Date().getFullYear() + '.' + new Date().getMonth() + '.' + new Date().getDate());
+            $('#datePlugin').find('.selected-content').find('p.end').find('span').eq(0).text(new Date().getFullYear() + '.' + new Date().getMonth() + '.' + new Date().getDate());
         }
 
         function checkdays(year, month) {
@@ -218,77 +138,48 @@
             return (new Date(new_date.getTime() - 1000 * 60 * 60 * 24)).getDate(); //获取当月最后一天日期    
         }
 
-        function createUL() {
+        function createUI() {
             CreateDateUI();
-            $("#yearwrapper ul").html(createYEAR_UL());
-            $("#monthwrapper ul").html(createMONTH_UL());
-            $("#daywrapper ul").html(createDAY_UL());
+            $("#yearwrapper ul").html(createYearUI());
+            $("#monthwrapper ul").html(createMonthUI());
+            $("#daywrapper ul").html(createDayUI());
         }
 
         function CreateDateUI() {
             var str = '' +
-                '<div id="dateshadow"></div>' +
-                '<div id="datePage" class="page">' +
-                '<section>' +
-                '<div id="datetitle"><h1>请选择日期</h1></div>' +
-                '<div id="datemark"><a id="markyear"></a><a id="markmonth"></a><a id="markday"></a></div>' +
-                '<div id="timemark"><a id="markhour"></a><a id="markminut"></a><a id="marksecond"></a></div>' +
-                '<div id="datescroll">' +
-                '<div id="yearwrapper">' +
-                '<ul></ul>' +
+                '<div class="calendar-content">' +
+                '<img src="assets/css/image/triangle.png" />' +
+                '<div class="selected-content">' +
+                '<p class="start cur">' +
+                '<span>2016.5.22</span>' +
+                '<span>开始时间</span>' +
+                '</p>' +
+                '<p class="end">' +
+                '<span>2016.7.24</span>' +
+                '<span>结束时间</span>' +
+                '</p>' +
                 '</div>' +
-                '<div id="monthwrapper">' +
-                '<ul></ul>' +
+                '<div class="calendar-list">' +
+                '<div id="yearwrapper"><ul></ul></div>' +
+                '<div id="monthwrapper"><ul></ul></div>' +
+                '<div id="daywrapper"><ul></ul></div>' +
                 '</div>' +
-                '<div id="daywrapper">' +
-                '<ul></ul>' +
-                '</div>' +
-                '</div>' +
-                '<div id="datescroll_datetime">' +
-                '<div id="Hourwrapper">' +
-                '<ul></ul>' +
-                '</div>' +
-                '<div id="Minutewrapper">' +
-                '<ul></ul>' +
-                '</div>' +
-                '<div id="Secondwrapper">' +
-                '<ul></ul>' +
-                '</div>' +
-                '</div>' +
-                '</section>' +
-                '<footer id="dateFooter">' +
-                '<div id="setcancle">' +
-                '<ul>' +
-                '<li id="dateconfirm">确定</li>' +
-                '<li id="datecancle">取消</li>' +
-                '</ul>' +
-                '</div>' +
-                '</footer>' +
-                '</div>';
-            $('body').append('<div id="datePlugin">' + str + '</div>');
-        }
-
-        function addTimeStyle() {
-            $("#datePage").css("height", "380px");
-            $("#datePage").css("top", "60px");
-            $("#yearwrapper").css("position", "absolute");
-            $("#yearwrapper").css("bottom", "200px");
-            $("#monthwrapper").css("position", "absolute");
-            $("#monthwrapper").css("bottom", "200px");
-            $("#daywrapper").css("position", "absolute");
-            $("#daywrapper").css("bottom", "200px");
+                '<div class ="calendar-foot">' +
+                '<div id="datecancle">取消</div><div id="dateconfirm">确定</div></div></div>';
+            $('#datePlugin').remove();
+            opts.$select.append('<div id="datePlugin">' + str + '</div>');
         }
         //创建 --年-- 列表
-        function createYEAR_UL() {
-            var str = "<li>&nbsp;</li>";
+        function createYearUI() {
+            var str = "";
             for (var i = opts.beginyear; i <= opts.endyear; i++) {
                 str += '<li>' + i + '年</li>'
             }
             return str + "<li>&nbsp;</li>";;
         }
         //创建 --月-- 列表
-        function createMONTH_UL() {
-            var str = "<li>&nbsp;</li>";
+        function createMonthUI() {
+            var str = "";
             for (var i = opts.beginmonth; i <= opts.endmonth; i++) {
                 if (i < 10) {
                     i = "0" + i
@@ -298,38 +189,14 @@
             return str + "<li>&nbsp;</li>";;
         }
         //创建 --日-- 列表
-        function createDAY_UL() {
+        function createDayUI() {
             $("#daywrapper ul").html("");
-            var str = "<li>&nbsp;</li>";
+            var str = "";
             for (var i = opts.beginday; i <= opts.endday; i++) {
                 str += '<li>' + i + '日</li>'
             }
             return str + "<li>&nbsp;</li>";;
         }
-        //创建 --时-- 列表
-        function createHOURS_UL() {
-            var str = "<li>&nbsp;</li>";
-            for (var i = opts.beginhour; i <= opts.endhour; i++) {
-                str += '<li>' + i + '时</li>'
-            }
-            return str + "<li>&nbsp;</li>";;
-        }
-        //创建 --分-- 列表
-        function createMINUTE_UL() {
-            var str = "<li>&nbsp;</li>";
-            for (var i = opts.beginminute; i <= opts.endminute; i++) {
-                if (i < 10) {
-                    i = "0" + i
-                }
-                str += '<li>' + i + '分</li>'
-            }
-            return str + "<li>&nbsp;</li>";;
-        }
-        //创建 --分-- 列表
-        function createSECOND_UL() {
-            var str = "<li>&nbsp;</li>";
-            str += "<li>上午</li><li>下午</li>"
-            return str + "<li>&nbsp;</li>";;
-        }
+
     }
 })(jQuery);

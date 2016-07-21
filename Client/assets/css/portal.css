@@ -425,7 +425,7 @@
 .addterminal-box {
     color: #333333;
     font-size: 1.6rem;
-    padding: 1.3rem 2rem;
+    padding: 1.3rem 0;
 }
 
 .addterminal-box li {
@@ -433,6 +433,10 @@
     height: 3rem;
     line-height: 2rem;
     margin-bottom: 1.1rem;
+}
+
+.addterminal-box li:last-child {
+    margin-top: 1.1rem;
 }
 
 li > label {
@@ -541,12 +545,12 @@ li > label > i {
 .search-box input {
     border: 0;
     height: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     width: 85%;
 }
 
 .search-box img {
-    width: 1.5rem;
+    width: 1.4rem;
 }
 
 .terminal-list li {
@@ -739,17 +743,18 @@ li > label > i {
     position: relative;
     background: #ffffff;
     box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.7);
-    width: 28rem;
+    width: 31rem;
     border-radius: 1rem;
     color: #333333;
-    font-size: 1.3rem;
-    top: 1rem;
-    left: 1rem;
+    font-size: 1.6rem;
+    top: 2rem;
+    left: 2rem;
+    z-index: 999;
 }
 
 .drop-list img {
     position: absolute;
-    top: -2rem;
+    top: -2.2rem;
     width: 10%;
     left: 4rem;
 }
@@ -761,7 +766,7 @@ li > label > i {
 .drop-list li {
     height: 4.6rem;
     line-height: 4.6rem;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
 }
 
 .drop-list li .pull-right {
@@ -787,11 +792,12 @@ li > label > i {
     border-radius: .5rem;
     text-align: center;
     line-height: 3.5rem;
+    margin: 1rem;
 }
 
 .rank-box .tab-box li {
     border-right: 1px solid #34acea;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     flex: 1;
 }
 
@@ -943,7 +949,7 @@ li > label > i {
 }
 
 .visitstep-box main {
-    padding-top: 4.5rem;
+    padding-top: 4.3rem;
 }
 
 .visitstep-box main > div {
@@ -959,7 +965,7 @@ li > label > i {
 
 .arrive-store img,
 .check-store img {
-    width: 20%;
+    width: 19%;
     margin: 1rem 0 0;
 }
 
@@ -970,7 +976,7 @@ li > label > i {
 }
 
 .arrive-store ul li:not(:first-child) {
-    height: 5rem;
+    min-height: 5rem;
     line-height: 2.5rem;
 }
 
@@ -1038,6 +1044,16 @@ li > label > i {
     border-bottom: 0;
 }
 
+.visitstep-box .distribute-box .addterminal-box,
+.visitstep-box .order-manage .addterminal-box {
+    padding: 1rem 1rem 0 1rem;
+}
+
+.visitstep-box .distribute-box .addterminal-box li:last-child,
+.visitstep-box .order-manage .addterminal-box li:last-child {
+    margin-bottom: 0;
+}
+
 .visitstep-box .distribute-box .addterminal-box input,
 .visitstep-box .order-manage .addterminal-box input {
     background-color: #f2f2f2;
@@ -1075,6 +1091,8 @@ li > label > i {
     resize: none;
     font-size: 1.8rem;
     color: #8c8c8c;
+    width: 100%;
+    border: 1px solid #cccccc;
 }
 
 
@@ -1082,11 +1100,10 @@ li > label > i {
 
 .simple-list > li {
     display: flex;
-    flex-wrap: wrap;
 }
 
 .simple-list li > div:first-child {
-    width: 25rem;
+    width: 80%;
 }
 
 .simple-list li {
@@ -1103,7 +1120,7 @@ li > label > i {
 
 .simple-list li p,
 .simple-list li span {
-    color: #8c8c8c;
+    color: #999999;
     font-size: 1.2rem;
 }
 
@@ -1142,7 +1159,7 @@ li > label > i {
 
 .promotion-list li > div:nth-child(2) > span {
     color: #ff8000;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
@@ -1151,7 +1168,7 @@ li > label > i {
 }
 
 .promotion-list li > div:first-child {
-    width: 28rem;
+    width: 89%;
 }
 
 .img-up {
@@ -1179,7 +1196,16 @@ li > label > i {
 .promotion-list .unfold > ul > li:nth-child(2) > p {
     padding: .8rem 1.8rem;
     color: #343434;
-    font-size: 1.6rem;
+}
+
+.promotion-list .unfold span,
+.promotion-list .unfold p,
+.promotion-list .unfold h4 {
+    font-size: 1.2rem!important;
+}
+
+.promotion-list .unfold li {
+    line-height: 1.8rem;
 }
 
 .promotion-list .unfold > ul > li:first-child > h4:first-child,
@@ -1193,7 +1219,7 @@ li > label > i {
 }
 
 .promotion-list .unfold > ul > li:last-child h4 {
-    width: 27rem;
+    width: 90%;
 }
 
 .promotion-list .unfold > ul > li:last-child img {
@@ -1218,6 +1244,45 @@ li > label > i {
 
 
 /*终端活跃度*/
+
+.active-box {
+    padding: 10rem 3rem;
+}
+
+.active-box > div > p {
+    float: right;
+    margin-bottom: 3rem;
+}
+
+.active-box > div > p > span:first-child {
+    color: #56a1ee;
+    font-size: 3.6rem;
+}
+
+.active-box > div > p > span:last-child {
+    color: #343434;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+.active-box > div {
+    position: relative;
+    padding-right: 2rem;
+}
+
+.active-box > div > p:after {
+    content: "";
+    background-image: url("image/triangle-bottom.png");
+    background-size: 1.5rem;
+    width: 1.5rem;
+    height: 1rem;
+    position: absolute;
+    top: 2.5rem;
+    right: 0;
+}
+
+
+/*终端活跃度详情*/
 
 .active-detail > ul li > img {
     width: 10%;
