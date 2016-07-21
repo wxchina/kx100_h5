@@ -31,7 +31,7 @@
                         <h4>拍照上传</h4>
                         <i class="red-txt">*</i>
                     </div>
-                    <img src="assets/css/image/addimg.png" />
+                    <img class="take-pics" src="assets/css/image/addimg.png" />
                 </li>
                 <li>
                     <h4>上次拜访小结</h4>
@@ -52,7 +52,7 @@
                             终端名称
                             <i class="red-txt">*</i>
                         </label>
-                        <input placeholder="请输入" value="711便利店" readonly />
+                        <input placeholder="请输入" value="壹加壹便利店" readonly />
                         <span class="lock-icon"><img src="assets/css/image/lock.png" /></span>
                     </li>
                     <li>
@@ -61,7 +61,9 @@
                             <i class="red-txt">*</i>
                         </label>
                         <select>
-                            <option>中级</option>
+                            <option>金</option>
+                            <option>银</option>
+                            <option>钻</option>
                         </select>
                     </li>
                     <li>
@@ -71,6 +73,8 @@
                         </label>
                         <select>
                             <option>现代</option>
+                            <option>传统</option>
+                            <option>特渠</option>
                         </select>
                     </li>
                     <li>
@@ -78,21 +82,21 @@
                             联系电话
                             <i class="red-txt">*</i>
                         </label>
-                        <input placeholder="请输入" value="1895653564" />
+                        <input placeholder="请输入" value="15000000000" />
                     </li>
                     <li>
                         <label>
                             联系人
                             <i class="red-txt">*</i>
                         </label>
-                        <input placeholder="请输入" value="陈立辉" />
+                        <input placeholder="请输入" value="王依依" />
                     </li>
                     <li class="address">
                         <label>
                             地址
                             <i class="red-txt">*</i>
                         </label>
-                        <textarea rows="2">
+                        <textarea rows="2" id="visitLocation">
                             广东省广州市天河区天河路维多利亚广场B塔33楼快消产品部
                         </textarea>
                     </li>
@@ -118,25 +122,37 @@
                     <div>
                         <h4>客户冰柜照片</h4>
                     </div>
-                    <img src="assets/css/image/addimg.png" />
+                    <img class="take-pics" src="assets/css/image/addimg.png" />
                 </li>
                 <li>
                     <div>
                         <h4>货架陈列照片</h4>
                     </div>
-                    <img src="assets/css/image/addimg.png" />
+                    <img class="take-pics" src="assets/css/image/addimg.png" />
                 </li>
                 <li>
                     <div>
                         <h4>堆箱陈列</h4>
                     </div>
-                    <img src="assets/css/image/addimg.png" />
+                    <img class="take-pics" src="assets/css/image/addimg.png" />
                 </li>
                 <li>
                     <div>
-                        <h4>拍照上传</h4>
+                        <h4>广告</h4>
                     </div>
-                    <img src="assets/css/image/addimg.png" />
+                    <img class="take-pics" src="assets/css/image/addimg.png" />
+                </li>
+                <li class="input-box">
+                    <label>
+                        POP拍照
+                    </label>
+                    <input placeholder="请输入" />
+                </li>
+                <li class="input-box">
+                    <label>
+                        PVC拍照
+                    </label>
+                    <input placeholder="请输入" />
                 </li>
                 <li class="input-box">
                     <label>
@@ -159,130 +175,35 @@
             </ul>
         </div>
         <!-- 产品铺货 -->
-        <div class="hide visit-content distribute-box">
+        <div class="hide visit-content distribute-box fold-box">
             <div class="search-wrap">
                 <div class="search-box">
                     <label><img src="assets/css/image/search.png"></label>
                     <input type="text" placeholder="搜索">
-                    <span><img src="assets/css/image/qrcode.png"></span>
+                    <span id="qrcodeBox"><img src="assets/css/image/qrcode.png" /></span>
                 </div>
                 <div>
                 </div>
             </div>
             <div>
-                <ul>
-                    <li>
-                        <span class="triangle-right"><img src="assets/css/image/triangle-right.png" /></span>
-                        <span>可口可乐</span>
-                    </li>
-                    <li>
-                        <span class="triangle-right"><img src="assets/css/image/triangle-right.png" /></span>
-                        <span>冰凉雪碧</span>
-                    </li>
-                    <li>
-                        <span class="triangle-down"><img src="assets/css/image/triangle-bottom.png" /></span>
-                        <span>冰红茶</span>
-                    </li>
-                    <div>
-                        <ul class="addterminal-box">
-                            <li>
-                                <label>
-                                    终端名称
-                                    <i class="red-txt">*</i>
-                                </label>
-                                <input placeholder="请输入" />
-                            </li>
-                            <li>
-                                <label>
-                                    终端名称
-                                    <i class="red-txt">*</i>
-                                </label>
-                                <input placeholder="请输入" />
-                            </li>
-                            <li>
-                                <label>
-                                    终端名称
-                                    <i class="red-txt">*</i>
-                                </label>
-                                <input placeholder="请输入" />
-                            </li>
-                        </ul>
-                    </div>
-                    <li>
-                        <span class="triangle-right"><img src="assets/css/image/triangle-right.png" /></span>
-                        <span>宝特水</span>
-                    </li>
-                    <li>
-                        <span class="triangle-right"><img src="assets/css/image/triangle-right.png" /></span>
-                        <span>恒大冰泉</span>
-                    </li>
-                </ul>
+                <ul id="distributeContent"></ul>
             </div>
         </div>
         <!-- 订单管理 -->
-        <div class="hide visit-content order-manage">
+        <div class="hide visit-content order-manage fold-box">
             <div class="search-wrap">
                 <div class="search-box">
                     <label><img src="assets/css/image/search.png"></label>
                     <input type="text" placeholder="搜索">
                 </div>
-                <select>
-                    <option>请选择</option>
-                    <option>选择啥</option>
-                </select>
             </div>
             <div>
-                <ul>
-                    <li>
-                        <span class="triangle-right"><img src="assets/css/image/triangle-right.png" /></span>
-                        <span>可口可乐</span>
-                    </li>
-                    <li>
-                        <span class="triangle-right"><img src="assets/css/image/triangle-right.png" /></span>
-                        <span>冰凉雪碧</span>
-                    </li>
-                    <li>
-                        <span class="triangle-down"><img src="assets/css/image/triangle-bottom.png" /></span>
-                        <span>冰红茶</span>
-                    </li>
-                    <div>
-                        <ul class="addterminal-box">
-                            <li>
-                                <label>
-                                    终端名称
-                                    <i class="red-txt">*</i>
-                                </label>
-                                <input placeholder="请输入" />
-                            </li>
-                            <li>
-                                <label>
-                                    终端名称
-                                    <i class="red-txt">*</i>
-                                </label>
-                                <input placeholder="请输入" />
-                            </li>
-                            <li>
-                                <label>
-                                    终端名称
-                                    <i class="red-txt">*</i>
-                                </label>
-                                <input placeholder="请输入" />
-                            </li>
-                        </ul>
-                    </div>
-                    <li>
-                        <span class="triangle-right"><img src="assets/css/image/triangle-right.png" /></span>
-                        <span>宝特水</span>
-                    </li>
-                    <li>
-                        <span class="triangle-right"><img src="assets/css/image/triangle-right.png" /></span>
-                        <span>恒大冰泉</span>
-                    </li>
+                <ul id="orderManageContent">
                 </ul>
             </div>
         </div>
         <!-- 促销执行 -->
-        <div class="hide visit-content distribute-box">
+        <div class="hide visit-content distribute-box fold-box promotion-box">
             <div class="search-wrap">
                 <div class="search-box">
                     <label><img src="assets/css/image/search.png"></label>
@@ -292,50 +213,41 @@
                 </div>
             </div>
             <div>
-                <ul>
+                <ul id="promotionContent">
                     <li>
-                        <span class="triangle-right"><img src="assets/css/image/triangle-right.png" /></span>
-                        <span>可口可乐</span>
+                        <span class="triangle-right promotion-fold"><img src="assets/css/image/triangle-right.png" /></span>
+                        <span>促销0809</span>
                     </li>
                 </ul>
             </div>
         </div>
         <!-- 资产巡检 -->
-        <div class="hide visit-content distribute-box">
+        <div class="hide visit-content distribute-box fold-box check-property">
             <div class="search-wrap">
                 <div class="search-box">
                     <label><img src="assets/css/image/search.png"></label>
                     <input type="text" placeholder="搜索">
                 </div>
-                <div>
-                </div>
             </div>
             <div>
-                <ul>
+                <ul id="propertyContent">
                     <li>
-                        <span class="triangle-right"><img src="assets/css/image/triangle-right.png" /></span>
-                        <span>可口可乐</span>
+                        <span class="triangle-right property-fold"><img src="assets/css/image/triangle-right.png" /></span>
+                        <span>初始资产</span>
                     </li>
                 </ul>
             </div>
         </div>
         <!-- 竞品管理 -->
-        <div class="hide visit-content distribute-box">
+        <div class="hide visit-content fold-box distribute-box opponent-box">
             <div class="search-wrap">
                 <div class="search-box">
                     <label><img src="assets/css/image/search.png"></label>
                     <input type="text" placeholder="搜索">
                 </div>
-                <div>
-                </div>
             </div>
             <div>
-                <ul>
-                    <li>
-                        <span class="triangle-right"><img src="assets/css/image/triangle-right.png" /></span>
-                        <span>可口可乐</span>
-                    </li>
-                </ul>
+                <ul id="opponentContent"></ul>
             </div>
         </div>
         <!-- 拜访小结 -->

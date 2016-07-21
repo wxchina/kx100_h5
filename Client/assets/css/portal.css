@@ -425,7 +425,7 @@
 .addterminal-box {
     color: #333333;
     font-size: 1.6rem;
-    padding: 1.3rem 0;
+    padding: 1.3rem 2rem;
 }
 
 .addterminal-box li {
@@ -562,23 +562,29 @@ li > label > i {
     display: inline-block;
 }
 
-.terminal-list li p:first-of-type {
+.terminal-list li .pull-left p:first-child,
+.terminal-list li .pull-left p:first-child span:first-child {
     color: #404040;
     font-size: 1.6rem;
 }
 
-.terminal-list li p {
+.terminal-list li p,
+.terminal-list li p > span {
     color: #8c8c8c;
     font-size: 1.2rem;
 }
 
-.terminal-list li span {
+.terminal-list li .pull-right span {
     color: #343434;
     font-size: 1.6rem;
 }
 
 .terminal-list .pull-left {
     line-height: 1.9rem;
+}
+
+.terminal-list .pull-left p:first-child {
+    margin-bottom: .5rem;
 }
 
 .terminal-list .pull-left span {
@@ -743,7 +749,7 @@ li > label > i {
     position: relative;
     background: #ffffff;
     box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.7);
-    width: 31rem;
+    width: 28rem;
     border-radius: 1rem;
     color: #333333;
     font-size: 1.6rem;
@@ -754,7 +760,7 @@ li > label > i {
 
 .drop-list img {
     position: absolute;
-    top: -2.2rem;
+    top: -2rem;
     width: 10%;
     left: 4rem;
 }
@@ -793,6 +799,10 @@ li > label > i {
     text-align: center;
     line-height: 3.5rem;
     margin: 1rem;
+}
+
+.rank-box main img {
+    width: 30rem;
 }
 
 .rank-box .tab-box li {
@@ -963,6 +973,10 @@ li > label > i {
     font-size: 1.6rem;
 }
 
+.visitstep-box .addterminal-box {
+    padding: 1.3rem 0;
+}
+
 .arrive-store img,
 .check-store img {
     width: 19%;
@@ -1049,6 +1063,31 @@ li > label > i {
     padding: 1rem 1rem 0 1rem;
 }
 
+.visitstep-box .fold-box .addterminal-box input,
+.visitstep-box .fold-box .addterminal-box select,
+.visitstep-box .fold-box .addterminal-box textarea {
+    padding: 0 2.5rem 0 13.5rem;
+}
+
+.visitstep-box .fold-box .addterminal-box li > label {
+    width: 12rem;
+}
+
+li.display-pics {
+    height: 10rem;
+}
+
+li.display-pics img {
+    width: 25%;
+    margin: 1rem 0 0;
+}
+
+.distribute-fold,
+.ordermanage-fold,
+.opponent-fold {
+    margin-right: .5rem;
+}
+
 .visitstep-box .distribute-box .addterminal-box li:last-child,
 .visitstep-box .order-manage .addterminal-box li:last-child {
     margin-bottom: 0;
@@ -1057,14 +1096,6 @@ li > label > i {
 .visitstep-box .distribute-box .addterminal-box input,
 .visitstep-box .order-manage .addterminal-box input {
     background-color: #f2f2f2;
-}
-
-.visitstep-box .order-manage .search-wrap {
-    display: flex;
-}
-
-.visitstep-box .order-manage .search-wrap .search-box {
-    width: 75%;
 }
 
 .visitstep-box .order-manage .search-wrap select {
@@ -1103,7 +1134,7 @@ li > label > i {
 }
 
 .simple-list li > div:first-child {
-    width: 80%;
+    width: 75%;
 }
 
 .simple-list li {
@@ -1176,6 +1207,11 @@ li > label > i {
     -webkit-transform: rotate(-180deg);
 }
 
+.img-down img {
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+}
+
 .promotion-list .unfold {
     width: 100%;
 }
@@ -1186,14 +1222,12 @@ li > label > i {
     background-color: #f2f2f2;
 }
 
-.promotion-list .unfold > ul > li:first-child,
-.promotion-list .unfold > ul > li:nth-child(2) {
+.promotion-list .unfold > ul > li:first-child {
     padding: 0;
     display: flex;
 }
 
-.promotion-list .unfold > ul > li:first-child > h4,
-.promotion-list .unfold > ul > li:nth-child(2) > p {
+.promotion-list .unfold > ul > li:first-child > h4 {
     padding: .8rem 1.8rem;
     color: #343434;
 }
@@ -1208,8 +1242,7 @@ li > label > i {
     line-height: 1.8rem;
 }
 
-.promotion-list .unfold > ul > li:first-child > h4:first-child,
-.promotion-list .unfold > ul > li:nth-child(2) > p:first-child {
+.promotion-list .unfold > ul > li:first-child > h4:first-child {
     border-right: 1px solid #cccccc;
     width: 7rem;
 }
@@ -1235,7 +1268,7 @@ li > label > i {
 /*关联终端*/
 
 .relate-terminal .simple-list h4 {
-    width: 29rem;
+    width: 24rem;
 }
 
 .relate-terminal .simple-list p {

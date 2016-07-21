@@ -18,7 +18,20 @@ define([], function() {
         $('#submitSuc').show();
         $('#submitSuc').fadeOut(3000);
     };
-
+    //调用json数据接口
+    $.extend({
+        qryData: function(key, cb) {
+            var curIndustry = localStorage.getItem('kx100_industry');
+            var url = "/statics/yzj/data/" + key + ".json"
+            if (!curIndustry) return;
+            $.ajax({
+                url: url,
+                type: "get",
+            }).then(function(data) {
+                cb(data[curIndustry]);
+            });
+        }
+    })
 
 
 
@@ -90,6 +103,22 @@ define([], function() {
         $(this).parents('main').find('img').addClass('hide').end().find('img').eq(index).removeClass('hide');
     })
 
+    //点击拜访八步骤部分的拍照图标进行拍照
+    $('body').off('click.takepics').on('click.takepics', '.take-pics', function() {
+        var $selector = $(this);
+        $('#loadingBox').removeClass('hide');
+
+        XuntongJSBridge && XuntongJSBridge.call('selectPic', { 'type': 'camera' },
+            function(result) {
+                $('#loadingBox').addClass('hide');
+                if (result.success) {
+                    //构建图片路径
+                    var imgdata = "data:image/" + result.data.fileExt + ";base64," + result.data.fileData;
+                    selector.html('<img src="' + imgdata + '">');
+                }
+            });
+        setTimeout("$('#loadingBox').addClass('hide')", 1000);
+    });
     //点击拜访八步骤的tab切换步骤
     $('body').on('click', '.visitstep-box nav li', function(e) {
         if ($(this).hasClass('cur')) return;
@@ -99,7 +128,38 @@ define([], function() {
         $(this).parents('.visitstep-box').find('main .visit-content').addClass('hide').end().find('.visit-content').eq(index).removeClass('hide');
     });
 
+    //点击八步骤的展开按钮
+    $('body').on('click', '.distribute-fold, .ordermanage-fold, .promotion-fold, .property-fold, .opponent-fold', function(e) {
+        var $selector = $(this).closest('li').siblings('.addterminal-box');
+        if ($(this).hasClass('img-down')) {
+            $selector.remove();
+            $(this).removeClass('img-down');
+        } else {
+            $(this).addClass('img-down');
+            var str_destribute = '<ul class="addterminal-box"><li><label>货架排面数量<i class="red-txt">*</i>' + '</label><input placeholder="请输入" /></li><li><label>冰箱排面数量<i class="red-txt">*</i>' + '</label><input placeholder="请输入" /></li><li><label>堆箱数量' + '</label><input placeholder="请输入" /></li><li><label>库存数量</label>' + '<input placeholder="请输入" /></li><li><label>滞销半年数量</label>' + '<input placeholder="请输入" /></li><li><label>销量</label>' + '<input placeholder="请输入" /></li><li><label>是否缺货锁码</label>' + '<select><option>请选择</option><option>是</option><option>否</option></select></li></ul>';
+            var str_ordermanage = '<ul class="addterminal-box"><li><label>分销订单数' + '</label><input placeholder="请输入" /></li><li><label>单品订单数' + '</label><input placeholder="请输入" /></li><li><label>单价<i class="red-txt">*</i>' + '</label><input placeholder="请输入" /></li><li><label>赠送数量</label>' + '<input placeholder="请输入" /></li><li><label>赠品选择</label>' + '<select><option>请选择</option></select></li></ul>';
+            var str_promortion = '<ul class="addterminal-box"><li><label>促销类型</label><input placeholder="请输入" value="促销"></li>' + '<li><label>投放品牌</label><input placeholder="请输入" value="玄娃"></li>' + '<li><label>陈列类型<i class="red-txt">*</i></label><select><option>请选择</option><option>堆头</option><option>堆箱</option><option>陈列架</option></select></li>' + '<li><label>促销开始时间<i class="red-txt">*</i></label><select><option>2016-01-01</option></select></li>' + '<li><label>促销结束时间<i class="red-txt">*</i></label><select><option>2018-01-01</option></select></li>' + '<li><label>规则说明</label><input placeholder="请输入"></li>' + '<li class="display-pics"><div><h4>陈列拍照</h4></div><img class="take-pics" src="assets/css/image/addimg.png"></li></ul>';
+            var str_property = '<ul class="addterminal-box"><li><label>资产编号</label><input placeholder="请输入" value="xuanwu001"></li>' + '<li><label>SKU数目</label><input placeholder="请输入" ></li>' + '<li><label>目标使用纯度</label><input placeholder="请输入" value="3.00"></li>' + '<li><label>实际使用纯度</label><input placeholder="请输入" ></li>' + '<li><label>备注</label><input placeholder="请输入" ></li>' + '<li><label>使用状态<i class="red-txt">*</i></label><select><option>请选择</option><option>正常</option><option>异常</option></select></li>' + '<li class="display-pics"><div><h4>拍照</h4></div><img class="take-pics" src="assets/css/image/addimg.png"></li></ul>'
+            var str_opponent = '<ul class="addterminal-box"><li><label>竞品名称<i class="red-txt">*</i></label><input placeholder="请输入" value="' + $(this).siblings().text() + '" ></li><li><label>竞品品牌<i class="red-txt">*</i></label><input placeholder="请输入"></li>' + '<li><label>竞品品类<i class="red-txt">*</i></label><input placeholder="请输入" value="' + $(this).siblings().text() + '" ></li>' + '<li><label>竞品零售价<i class="red-txt">*</i></label><input placeholder="请输入" ></li>' + '<li><label>竞品促销价<i class="red-txt">*</i></label><input placeholder="请输入" ></li>' + '<li><label>陈列形式<i class="red-txt">*</i></label><input placeholder="请输入" ></li>' + '<li class="display-pics"><div><h4>陈列拍照<i class="red-txt">*</i></h4></div><img class="take-pics" src="assets/css/image/addimg.png"></li></ul>';
+            $(this).hasClass('distribute-fold') && ($(this).closest('li').after(str_destribute));
+            $(this).hasClass('ordermanage-fold') && ($(this).closest('li').after(str_ordermanage));
+            $(this).hasClass('promotion-fold') && ($(this).closest('li').after(str_promortion));
+            $(this).hasClass('property-fold') && ($(this).closest('li').after(str_property));
+            $(this).hasClass('opponent-fold') && ($(this).closest('li').after(str_opponent));
+        }
+    })
 
+    //点击我的促销展开详细内容
+
+    $('body').on('click', 'img.un-fold', function() {
+        if ($(this).hasClass('img-up')) {
+            $(this).closest('li').next().removeClass('hide');
+            $(this).removeClass('img-up');
+        } else {
+            $(this).closest('li').next().addClass('hide');
+            $(this).addClass('img-up');
+        }
+    })
     return {
         showSubmitSuc: showSubmitSuc,
         getUrlParams: getUrlParams
