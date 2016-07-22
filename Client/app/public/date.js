@@ -77,15 +77,15 @@
 
         function bindEvent() {
             resetIndex();
-            $("#dateconfirm").click(function(e) {
+            $("#dateconfirm").on('touchend', function(e) {
                 e.stopPropagation();
                 $(".calendar-content").hide();
             });
-            $("#datecancle").click(function(e) {
+            $("#datecancle").on('touchend', function(e) {
                 e.stopPropagation();
                 $(".calendar-content").hide();
             });
-            $('.selected-content').find('p').click(function(e) {
+            $('.selected-content').find('p').on('touchend', function(e) {
                 e.stopPropagation();
                 if ($(this).hasClass('cur')) return;
                 $(this).siblings().removeClass('cur');

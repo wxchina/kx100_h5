@@ -76,12 +76,27 @@ define([
 
     //设置右上角的关于
     function setAbout() {
-        XuntongJSBridge && XuntongJSBridge.call('createPop', {
-                "popTitle": "关于"
+        XuntongJSBridge.call('createPop', {
+                'popTitle': "关于",
+                'popTitleCallBackId': "callback1",
+                'menuList': [],
+                'shareData': {
+                    'isShowExt': ''
+                }
             },
             function(result) {
-                location.href = "#/view/yzj/about";
-            })
+                if (result.success == true || result.success == 'true') {
+                    var callBackId = result.data ? result.data.callBackId : '';
+                    if (callBackId == 'callback1') {
+                        callback1();
+                    }
+                }
+            }
+        );
+
+        function callback1() {
+            location.href = "#/view/yzj/about";
+        }
     }
 
     //设置左上角的返回按钮事件
