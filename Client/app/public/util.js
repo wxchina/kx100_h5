@@ -114,7 +114,7 @@ define([], function() {
                 if (result.success) {
                     //构建图片路径
                     var imgdata = "data:image/" + result.data.fileExt + ";base64," + result.data.fileData;
-                    selector.html('<img src="' + imgdata + '">');
+                    $selector.replaceWith('<img style="width: 30rem;height: 10rem;" src="' + imgdata + '">');
                 }
             });
         setTimeout("$('#loadingBox').addClass('hide')", 1000);

@@ -562,6 +562,10 @@ li > label > i {
     display: inline-block;
 }
 
+.terminal-list li .pull-left {
+    width: 80%;
+}
+
 .terminal-list li .pull-left p:first-child,
 .terminal-list li .pull-left p:first-child span:first-child {
     color: #404040;
@@ -612,44 +616,48 @@ li > label > i {
 /**功能列表*/
 
 .performlist-box {
-    padding: 3rem 1rem 8rem;
-    height: 100%;
-    text-align: center;
+    padding: 3rem 1rem;
 }
 
-.performlist-box img {
-    height: 100%;
-}
-
-.performlist-box ul {
-    opacity: 0;
-    position: absolute;
-    top: 3rem;
-    left: 1rem;
-    height: 85%;
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-}
-
-.performlist-box ul li:first-child {
-    height: 40%;
+.performlist-box li {
     display: flex;
 }
 
-.performlist-box ul li:first-child a {
-    flex: 1;
-}
-
-.performlist-box ul li:not(:first-child) {
-    flex: 1;
-    margin-top: 1rem;
-}
-
-.performlist-box ul li:not(:first-child) > a {
-    display: flex;
+.performlist-box li a {
     width: 100%;
     height: 100%;
+}
+
+.performlist-box li:first-child {
+    background-image: url("image/perform_month.png");
+    background-size: 30rem;
+    width: 30rem;
+    height: 18.5rem;
+    background-repeat: no-repeat;
+}
+
+.performlist-box li:nth-child(2) {
+    background-image: url("image/visit_async.png");
+    background-size: 30rem;
+    width: 30rem;
+    height: 9rem;
+    background-repeat: no-repeat;
+}
+
+.performlist-box li:nth-child(3) {
+    background-image: url("image/promotion_act.png");
+    background-size: 30rem;
+    width: 30rem;
+    height: 9rem;
+    background-repeat: no-repeat;
+}
+
+.performlist-box li:nth-child(4) {
+    background-image: url("image/terminal_act.png");
+    background-size: 30rem;
+    width: 30rem;
+    height: 9rem;
+    background-repeat: no-repeat;
 }
 
 
@@ -1074,7 +1082,7 @@ li > label > i {
 }
 
 li.display-pics {
-    height: 10rem;
+    height: 15rem;
 }
 
 li.display-pics img {

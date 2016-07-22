@@ -12,15 +12,9 @@ define([
     window.u = u;
     window.m = m;
 
-    //设置右上角的内容以及回调函数
-    XuntongJSBridge && XuntongJSBridge.call('createPop', {
-            "popTitle": "关于"
-        },
-        function(result) {
-            location.href = "#/view/yzj/about";
-        })
 
     loadpage();
+    setBack();
 
     //绑定事件
     $(window).bind("hashchange", loadpage);
@@ -49,7 +43,8 @@ define([
                 try {
                     //设置页面标题并显示
                     XuntongJSBridge && XuntongJSBridge.call('setWebViewTitle', { 'title': m.pagetitle[curFun] || "玄讯快消100" });
-
+                    //统一设置右上角的关于
+                    setAbout();
                     //执行指定函数
                     m[curFun] && (typeof m[curFun] == "function") && m[curFun]();
                 } catch (e) {
@@ -77,6 +72,29 @@ define([
     function uninstallPage() {
         $('#container').empty();
         $('#loadingBox').addClass('hide');
+    }
+
+    //设置右上角的关于
+    function setAbout() {
+        XuntongJSBridge && XuntongJSBridge.call('createPop', {
+                "popTitle": "关于"
+            },
+            function(result) {
+                location.href = "#/view/yzj/about";
+            })
+    }
+
+    //设置左上角的返回按钮事件
+    function setBack() {
+        XuntongJSBridge.call('defback', {},
+            function() {
+                if (history.length <= 1) { //顶级页面，则关闭当前Web
+                    XuntongJSBridge.call('closeWebView');
+                } else {
+                    history.back();
+                }
+            }
+        );
     }
 
 })
