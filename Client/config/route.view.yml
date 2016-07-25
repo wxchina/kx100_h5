@@ -145,3 +145,32 @@ salesman-performance:
     responetype: 'html'
     authorized: true
     physical_file: 'salesman/performance/activedetail.html'          
+charger-work: 
+  - httpmethod: 'get'
+    routepath: '/view/yzj/charger/work/worklist'
+    description: '主管工作列表'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'charger/work/worklist.html' 
+  - httpmethod: 'get'
+    routepath: '/view/yzj/charger/work/coop_invest'
+    description: '协查'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'charger/work/coop_invest.html'  
+  - httpmethod: 'get'
+    routepath: '/view/yzj/charger/work/agent_check'
+    description: '协查'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'charger/work/agent_check.html'      
+  - httpmethod: 'get'
+    routepath: '/view/yzj/charger/work/check_detail'
+    description: '协查'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'charger/work/check_detail.html'     

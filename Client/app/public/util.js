@@ -168,7 +168,7 @@ define([], function() {
 
     //点击我的促销展开详细内容
 
-    $('body').on('touchend', '.promotion-list li', function(e) {
+    $('body').on('touchend', '.promotion-list li:not(.not_event)', function(e) {
         e.preventDefault();
         $flag = $(this).find('img');
         if ($flag.hasClass('img-up')) {

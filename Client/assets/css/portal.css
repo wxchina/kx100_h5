@@ -225,7 +225,7 @@
 }
 
 .feature-box img {
-    width: 14.6%;
+    width: 12%;
     position: absolute;
 }
 
@@ -235,7 +235,7 @@
 
 .feature-box a > div {
     display: inline-block;
-    margin-left: 19%;
+    margin-left: 15%;
     border-bottom: 1px solid #cccccc;
     width: 84%;
     line-height: 2.5rem;
@@ -1329,4 +1329,74 @@ li.display-pics img {
 
 .active-detail > ul li > div > p > img {
     width: 1rem;
+}
+
+
+/**主管-工作**/
+
+
+/**协访页面**/
+
+.coop_invest ul {}
+
+.coop_invest li {
+    display: flex;
+    height: 4.4rem;
+    line-height: 4.4rem;
+    font-size: 1.6rem;
+    color: #404040;
+    border-bottom: 1px solid #cccccc;
+    padding: 0 2rem;
+    cursor: pointer;
+}
+
+.coop_invest li span:first-child {
+    flex: 1;
+}
+
+.coop_invest li span:last-child {
+    width: 2rem;
+}
+
+.visitstep-box.store-pic li {
+    padding: 1rem 2rem;
+}
+
+.store-pic .next_step,
+.visit_assess .next_step {
+    color: #2a97ff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-bottom: 1px solid #cccccc;
+}
+
+.visit_assess .take_pic {
+    border-bottom: 1px solid #cccccc;
+    height: 11rem;
+}
+
+.visit_assess .take_pic h4 {
+    margin-bottom: .5rem;
+}
+
+.visit_assess .take_pic img {
+    width: 20%;
+}
+
+.visit_assess .longer_label label {
+    width: 12rem;
+}
+
+.visit_assess .longer_label select {
+    padding-left: 13rem;
+}
+
+.coop_invest li a {
+    display: flex;
+    width: 100%;
+}
+
+.check_detail .check-store {
+    padding: 0 2rem;
 }
