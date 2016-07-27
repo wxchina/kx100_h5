@@ -8,7 +8,7 @@ require.config({
     paths: {
         underscore: 'underscore/underscore-min',
         jquery: 'jquery/dist/jquery.min',
-        echarts: 'echarts/build/dist/echarts-all',
+        echarts: 'echarts/dist/echarts.min',
         iscroll: 'iscroll/build/iscroll',
         app: 'app/app'
     },
@@ -25,8 +25,6 @@ require.config({
         'iscroll'
     ],
     callback: function() {
-        //alert('let us start');
-        //console.log(location.hash);
         require(["app"]); //引导应用初始化
     }
 })

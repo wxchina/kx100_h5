@@ -20,10 +20,18 @@ define([], function() {
         $('#submitSuc').show();
         $('#submitSuc').fadeOut(3000);
     };
+    //生成guid
+    function guid() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0,
+                v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        })
+    }
     //调用json数据接口
     $.extend({
         qryData: function(key, cb) {
-            var curIndustry = localStorage.getItem('kx100_industry');
+            var curIndustry = JSON.parse(localStorage.getItem('kx100_industry')).value;
             var url = "/statics/yzj/data/" + key + ".json"
             if (!curIndustry) return;
             $.ajax({
@@ -41,7 +49,11 @@ define([], function() {
     //给选择角色绑定事件
     $('body').on('touchend', '#industryBox a', function(e) {
         e.preventDefault();
-        localStorage.setItem("kx100_industry", $(this).attr('industry'));
+        localStorage.setItem("kx100_industry", JSON.stringify({
+            key: $.trim($(this).text()),
+            value: $(this).attr('industry'),
+            num: $(this).attr('num')
+        }));
         location.href = "#/view/yzj/role";
     });
     //给考勤上下班按钮绑定事件
@@ -181,7 +193,8 @@ define([], function() {
     })
     return {
         showSubmitSuc: showSubmitSuc,
-        getUrlParams: getUrlParams
+        getUrlParams: getUrlParams,
+        guid: guid
     }
 
 })

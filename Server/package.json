@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "玄讯前端Web服务器",
     "author": "广州玄武无线科技有限公司,玄讯产品研发部,Web开发组",
-    "homepage": "http://www.xtion.com:8080",
+    "homepage": "http://o2otest.xtion.net:8012",
     "main": "launch.js",
     "scripts": {
         "test": "node test.js"

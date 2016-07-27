@@ -99,8 +99,18 @@
     font-size: 1.5rem;
 }
 
+.about-vip input.error {
+    border: 1px solid red;
+}
+
 .about-vip > div {
     margin: .8rem 1.5rem;
+}
+
+.error-content {
+    color: red!important;
+    margin: 0!important;
+    font-size: 1.3rem!important;
 }
 
 .about-vip .btn {
@@ -1399,4 +1409,91 @@ li.display-pics img {
 
 .check_detail .check-store {
     padding: 0 2rem;
+}
+
+
+/*主管业绩-销量分析*/
+
+.sales-async {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 2rem;
+}
+
+.sales-async section {
+    flex: 1;
+}
+
+.sales-async main {
+    width: 100%;
+    height: 90%;
+}
+
+.sales-async .chart-box {
+    width: 100%;
+    height: 100%;
+}
+
+.sales-async img {
+    width: 2rem;
+    margin-right: 1rem
+}
+
+
+/*.sales-async section hr {
+    width: 65%;
+    float: right;
+    border: .5px solid #b3b3b3;
+    margin-top: .75rem;
+}
+
+.sales-async section:last-child hr {
+    width: 55%;
+}*/
+
+.sales-async nav > ul > li {
+    flex: 1;
+    text-align: center;
+}
+
+.sales-async nav > ul {
+    margin: 2rem auto -3.5rem;
+    border: 1px solid #56a1ee;
+    border-radius: .5rem;
+    display: flex;
+    width: 15rem;
+    height: 3rem;
+    line-height: 3rem;
+    z-index: 2;
+}
+
+.sales-async nav > ul > li:first-child {
+    border-right: 1px solid #56a1ee;
+}
+
+.sales-async nav > ul > li.cur {
+    background: #56a1ee;
+    color: #ffffff;
+}
+
+.sales-async .select-month {
+    position: absolute;
+    right: 8%;
+}
+
+.sales-async .select-month > span:first-child {
+    color: #56a1ee;
+    font-size: 3.6rem;
+}
+
+.sales-async .select-month:after {
+    content: "";
+    background-image: url("image/triangle-bottom.png");
+    background-size: 1.5rem;
+    width: 1.5rem;
+    height: 1rem;
+    position: absolute;
+    top: 2.5rem;
+    left: 6rem;
 }

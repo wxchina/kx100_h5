@@ -1,23 +1,9 @@
 #自定义API路由配置，httpmethod（get|delete|post|put|patch）,responetype(json|file|xml|html)   
-portal:  
-  - httpmethod: 'get'                
-    routepath: '/api/portal/account/jcaptcha'
-    authorized: true
-    description: '获取验证码'
-    enableroute: true
-    responetype: ''
-    physical_file: ''
+about:  
   - httpmethod: 'post'                
-    routepath: '/api/portal/account/portallogin'
+    routepath: '/datasource'
     authorized: true
-    description: '门户登录'
-    enableroute: true
-    responetype: 'json'
-    physical_file: ''
-  - httpmethod: 'post'                
-    routepath: '/api/portal/account/systemlist'
-    authorized: true
-    description: '获取登录人应用列表'
+    description: '记录客户信息'
     enableroute: true
     responetype: 'json'
     physical_file: ''

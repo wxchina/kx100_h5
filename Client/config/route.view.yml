@@ -173,4 +173,19 @@ charger-work:
     enableroute: true
     responetype: 'html'
     authorized: true
-    physical_file: 'charger/work/check_detail.html'     
+    physical_file: 'charger/work/check_detail.html'    
+charger-performance: 
+  - httpmethod: 'get'
+    routepath: '/view/yzj/charger/performance/chargerlist'
+    description: '主管业绩列表'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'charger/performance/chargerlist.html' 
+  - httpmethod: 'get'
+    routepath: '/view/yzj/charger/performance/salesasync'
+    description: '销量分析'
+    enableroute: true
+    responetype: 'html'
+    authorized: true
+    physical_file: 'charger/performance/salesasync.html'          

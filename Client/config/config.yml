@@ -7,7 +7,7 @@ default:
   loginpage: 'portal.html'                        #用户验证页面  
   viewpath: 'views'                              #视图模板路径 
   viewengine: 'html'                             #视图引擎 
-  apiroot: '^/api/portal'                        #接口根路由
+  apiroot: '^/datasource'                        #接口根路由
   filesroot: '^/files/(template|common|temp)/'   #文件服务根路由定义
   confroot: '^/api/com/config'                   #配置引擎路由
   localconf: false                               #是否从本地读取JSON协议
@@ -50,8 +50,8 @@ test:
     port: 8085                                   #测试环境端口
     host: '127.0.0.1'                            #测试环境IP
   gateway:
-    port: 8081                                   #后端API PORT
-    host: '127.0.0.1'                            #后端API IP
+    port: 40011                                  #后端API PORT
+    host: '42.159.86.120'                            #后端API IP
   showerror: false                               #控制异常信息抛出
   viewcache: false                               #控制视图缓存
   xpoweredby: true                               #控制响应头显示程序运行环境
