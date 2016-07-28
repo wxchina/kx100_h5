@@ -1425,14 +1425,19 @@ li.display-pics img {
     flex: 1;
 }
 
-.sales-async main {
-    width: 100%;
-    height: 90%;
-}
-
 .sales-async .chart-box {
     width: 100%;
-    height: 100%;
+    height: 20rem;
+    position: relative;
+}
+
+.sales-async.promotion .chart-box {
+    height: 30rem;
+}
+
+.sales-async.terminal .chart-box {
+    margin-top: 8rem;
+    height: 30rem;
 }
 
 .sales-async img {
@@ -1451,6 +1456,10 @@ li.display-pics img {
 .sales-async section:last-child hr {
     width: 55%;
 }*/
+
+.sales-async nav {
+    height: 3rem;
+}
 
 .sales-async nav > ul > li {
     flex: 1;
@@ -1480,6 +1489,7 @@ li.display-pics img {
 .sales-async .select-month {
     position: absolute;
     right: 8%;
+    top: 10%;
 }
 
 .sales-async .select-month > span:first-child {
