@@ -111,7 +111,7 @@ define([], function() {
     })
 
     //点击日历区域
-    $('body').on('touchend', '.calendar-box, .active-box p', function(e) {
+    $('body').on('touchend', '.calendar-box, .active-box p, .select-month', function(e) {
         e.preventDefault();
         $(this).date({ theme: "date", $select: $(this).closest('div') });
     })
