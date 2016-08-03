@@ -431,6 +431,10 @@ textarea:focus {
     left: 22rem;
 }
 
+.require-box .calendar-content > img {
+    top: -2.2rem;
+}
+
 .calendar-content .selected-content {
     padding: 1rem 0;
 }

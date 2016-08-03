@@ -634,17 +634,64 @@ li > label > i {
 /**功能列表*/
 
 .performlist-box {
-    padding: 3rem 2rem;
+    height: 100%;
 }
 
 .performlist-box ul {
-    display: flex;
-    flex-direction: column;
+    height: 85%;
 }
 
-.performlist-box li {
-    margin-bottom: 1rem;
+.performlist-box footer {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    bottom: 0;
+    height: 5%;
+    border-top: 1px solid #cccccc;
+    background-color: #f9f9f9;
+}
+
+.performlist-box footer a {
     flex: 1;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.performlist-box footer a.cur {
+    color: #56a1ee;
+}
+
+.performlist-box footer a img {
+    width: 20%;
+    margin-top: -1rem;
+}
+
+.performlist-box ul {
+    padding-top: 2rem;
+}
+
+.performlist-box ul li {
+    margin: 0 auto .5rem;
+    width: 90%;
+    height: 19%;
+}
+
+.performlist-box ul li:first-child {
+    height: 38%;
+}
+
+.performlist-box ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.performlist-box ul li a img {
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -1383,15 +1430,16 @@ li.display-pics img {
 
 .visit_assess .take_pic {
     border-bottom: 1px solid #cccccc;
-    height: 11rem;
+    height: 13rem;
 }
 
 .visit_assess .take_pic h4 {
     margin-bottom: .5rem;
 }
 
-.visit_assess .take_pic img {
+.visit_assess .take_pic img.take-pics {
     width: 20%;
+    margin-top: 2rem;
 }
 
 .visit_assess .longer_label label {
@@ -1418,11 +1466,16 @@ li.display-pics img {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 2rem;
+    padding: 0 2rem;
 }
 
 .sales-async section {
     flex: 1;
+    margin-top: 2rem;
+}
+
+.sales-async section header {
+    font-size: 1.6rem;
 }
 
 .sales-async .chart-box {
@@ -1431,7 +1484,15 @@ li.display-pics img {
     position: relative;
 }
 
-.sales-async.promotion .chart-box {
+.visit-async section:first-child .chart-box {
+    height: 22rem;
+}
+
+.promotion section .chart-box {
+    height: 30rem;
+}
+
+.sales-async .sales-async.promotion .chart-box {
     height: 30rem;
 }
 
@@ -1442,7 +1503,8 @@ li.display-pics img {
 
 .sales-async img {
     width: 2rem;
-    margin-right: 1rem
+    margin-right: 1rem;
+    margin-bottom: .7rem;
 }
 
 
@@ -1472,8 +1534,8 @@ li.display-pics img {
     border-radius: .5rem;
     display: flex;
     width: 15rem;
-    height: 3rem;
-    line-height: 3rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
     z-index: 2;
 }
 
