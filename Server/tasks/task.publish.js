@@ -15,7 +15,7 @@ module.exports = function(callback) {
         rename = require("gulp-rename"),
         colors = require('colors/safe'),
         dateFormat = require('dateformat'),
-        zipfile = 'FRONT-END-' + dateFormat(new Date(), "yyyy-mm-dd-HH-MM-ss") + '.zip';
+        zipfile = 'kx100_h5-' + dateFormat(new Date(), "yyyy-mm-dd-HH-MM-ss") + '.zip';
 
     Q.fcall(function() { //第一步：执行build任务
             var deferred = Q.defer();
@@ -42,17 +42,17 @@ module.exports = function(callback) {
                 process.stdout.write(util.format('\x1b[37m%s', '17)'));
                 process.stdout.write(util.format('\x1b[33m%s\x1b[0m', ' copy server directory to dist directory...'));
                 gulp.src(['../Server/**', '!package.json', '!README.md', '!index.js'])
-                    .pipe(gulp.dest('dist/FRONT-END/Server'))
+                    .pipe(gulp.dest('dist/kx100_h5/Server'))
                     .on('finish', function() {
                         var pkg = require('../package.json');
                         var dellist = [
-                            'dist/FRONT-END/Server/README.md',
-                            'dist/FRONT-END/Server/index.js',
-                            'dist/FRONT-END/Server/package.json',
-                            'dist/FRONT-END/Server/tasks'
+                            'dist/kx100_h5/Server/README.md',
+                            'dist/kx100_h5/Server/index.js',
+                            'dist/kx100_h5/Server/package.json',
+                            'dist/kx100_h5/Server/tasks'
                         ];
                         var depen = Object.keys(pkg.devDependencies).map(function(c) {
-                            return 'dist/FRONT-END/Server/node_modules/' + c;
+                            return 'dist/kx100_h5/Server/node_modules/' + c;
                         });
                         del(dellist.concat(depen), function() {
                             process.stdout.write(util.format('\x1b[32m%s\x1b[0m', '  successful!\n\n'));
@@ -71,14 +71,14 @@ module.exports = function(callback) {
                 var deferred = Q.defer();
                 process.stdout.write(util.format('\x1b[37m%s', '18)'));
                 process.stdout.write(util.format('\x1b[33m%s\x1b[0m', ' modify the server config...'));
-                gulp.src('dist/FRONT-END/Server/launch.js')
+                gulp.src('dist/kx100_h5/Server/launch.js')
                     .pipe(rename({
                         basename: 'index',
                         extname: '.js'
                     }))
-                    .pipe(gulp.dest('dist/FRONT-END/Server'))
+                    .pipe(gulp.dest('dist/kx100_h5/Server'))
                     .on('finish', function() {
-                        del('dist/FRONT-END/Server/launch.js', function() {
+                        del('dist/kx100_h5/Server/launch.js', function() {
                             process.stdout.write(util.format('\x1b[32m%s\x1b[0m', '  successful!\n\n'));
                             deferred.resolve(true);
                         });

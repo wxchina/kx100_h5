@@ -4,7 +4,7 @@
     "description": "玄讯前端Web服务器",
     "author": "广州玄武无线科技有限公司,玄讯产品研发部,Web开发组",
     "homepage": "http://o2otest.xtion.net:8012",
-    "main": "launch.js",
+    "main": "index.js",
     "scripts": {
         "test": "node test.js"
     },
@@ -31,7 +31,8 @@
         "serve-favicon": "2.1.4",
         "serve-index": "1.2.1",
         "underscore": "1.7.0",
-        "yamljs": "0.2.0"
+        "yamljs": "0.2.0",
+        "autoprefixer": "6.3.7"
     },
     "repository": {
         "type": "svn",

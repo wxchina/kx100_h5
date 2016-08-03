@@ -6,7 +6,7 @@ define([
     "public/util.js",
     "module/module.min.js",
     "public/date.js",
-    "qing.js"
+    "public/qing.js"
 ], function(u, m) {
 
     window.u = u;
