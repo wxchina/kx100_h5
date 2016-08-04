@@ -197,22 +197,32 @@
 
 .industry-box > div {
     margin-top: 2.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .industry-box > div .row {
-    flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
 .industry-box > div a {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     margin: 1rem 1.4rem;
 }
 
 .industry-box > div .row.two a {
-    flex: 0 0 23%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 23%;
+            flex: 0 0 23%;
 }
 
 .industry-box > div a > p {
@@ -398,6 +408,8 @@
 }
 
 #terminalDetail {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 10rem;
     position: fixed;
@@ -409,7 +421,9 @@
 }
 
 #terminalDetail .terminal-info {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
 }
 
 #terminalDetail .terminal-info > div {
@@ -642,8 +656,13 @@ li > label > i {
 }
 
 .performlist-box footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     position: fixed;
     left: 0;
     right: 0;
@@ -655,7 +674,9 @@ li > label > i {
 }
 
 .performlist-box footer a {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     text-align: center;
     font-size: 1rem;
 }
@@ -710,11 +731,15 @@ li > label > i {
 }
 
 .require-box > ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
 .require-box > ul > li {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
 }
 
 .require-box > ul > li:first-child {
@@ -752,6 +777,8 @@ li > label > i {
     background-color: #edeef0;
     font-size: 1.1rem;
     color: #333333;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     text-align: center;
 }
@@ -764,7 +791,9 @@ li > label > i {
 
 .order-header li,
 .order-content li {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
 }
 
 .order-header li:not(:last-child),
@@ -777,11 +806,16 @@ li > label > i {
 }
 
 .order-content {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     background-color: #ffffff;
 }
 
 .order-content ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 4.5rem;
     line-height: 4.5rem;
@@ -833,6 +867,8 @@ li > label > i {
 }
 
 .rank-box .tab-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 3.5rem;
     color: #2a97ff;
@@ -850,7 +886,9 @@ li > label > i {
 .rank-box .tab-box li {
     border-right: 1px solid #34acea;
     font-size: 1.3rem;
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
 }
 
 .rank-box .tab-box li:last-child {
@@ -874,9 +912,15 @@ li > label > i {
 }
 
 .visit-box nav > ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 9.25rem;
     background-color: #ffffff;
     color: #343434;
@@ -888,7 +932,9 @@ li > label > i {
 }
 
 .visit-box nav > ul li {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     text-align: center;
 }
 
@@ -980,6 +1026,8 @@ li > label > i {
 }
 
 .visitstep-box nav > ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     color: #8c8c8c;
     font-size: 1.4rem;
@@ -1172,6 +1220,8 @@ li.display-pics img {
 /*拜访回顾*/
 
 .simple-list > li {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -1225,9 +1275,16 @@ li.display-pics img {
 }
 
 .simple-list li > div:nth-child(2) {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .promotion-list li > div:nth-child(2) > span {
@@ -1259,13 +1316,20 @@ li.display-pics img {
 }
 
 .promotion-list .unfold > ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     background-color: #f2f2f2;
 }
 
 .promotion-list .unfold > ul > li:first-child {
     padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -1290,6 +1354,8 @@ li.display-pics img {
 }
 
 .promotion-list .unfold > ul > li:last-child > a {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -1397,6 +1463,8 @@ li.display-pics img {
 .coop_invest ul {}
 
 .coop_invest li {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 4.4rem;
     line-height: 4.4rem;
@@ -1408,7 +1476,9 @@ li.display-pics img {
 }
 
 .coop_invest li span:first-child {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
 }
 
 .coop_invest li span:last-child {
@@ -1451,6 +1521,8 @@ li.display-pics img {
 }
 
 .coop_invest li a {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
 }
@@ -1463,14 +1535,21 @@ li.display-pics img {
 /*主管业绩-销量分析*/
 
 .sales-async {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     height: 100%;
     padding: 0 2rem;
 }
 
 .sales-async section {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     margin-top: 2rem;
 }
 
@@ -1512,7 +1591,9 @@ li.display-pics img {
 }
 
 .sales-async nav > ul > li {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     text-align: center;
 }
 
@@ -1520,6 +1601,8 @@ li.display-pics img {
     margin: 2rem auto -3.5rem;
     border: 1px solid #56a1ee;
     border-radius: .5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 15rem;
     height: 2.5rem;

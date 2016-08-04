@@ -8,6 +8,7 @@ module.exports = function(callback) {
 
     var Q = require('q'),
         del = require('del'),
+        rename = require("gulp-rename"),
         gulp = require('gulp'),
         util = require('util'),
         colors = require('colors/safe'),
@@ -22,41 +23,48 @@ module.exports = function(callback) {
         autoprefixer = require('autoprefixer'); //css自動加前綴
 
 
-    Q.fcall(function() { //第一步:生成dist目录，然后移动前端文件
+    Q.fcall(function() { //第一步:给css加上前缀
             var deferred = Q.defer();
-            process.stdout.write(util.format('\x1b[36m%s', '\nkx100_h5 AUTO WORKFLOW STEPS:\n\n'));
-            process.stdout.write(util.format('\x1b[37m%s', '1)'));
-            process.stdout.write(util.format('\x1b[33m%s\x1b[0m', ' cleaning dist directory...'));
-            del(['dist'], function() {
-                process.stdout.write(util.format('\x1b[32m%s\x1b[0m', '  successful!\n\n'));
-                process.stdout.write(util.format('\x1b[37m%s', '2)'));
-                process.stdout.write(util.format('\x1b[33m%s\x1b[0m', ' copy client directory to dist directory...'));
-                gulp.src(['./**', '!dist/**', '!zipfiles/**', '!docs/**', '!test/**', '!logs/**', '!bower.json', '!README.md', '!bower_components'])
-                    .pipe(gulp.dest('dist/kx100_h5/Client'))
-                    .on('finish', function() {
-                        del([
-                            'dist/kx100_h5/Client/assets/image',
-                            'dist/kx100_h5/Client/zipfiles',
-                            'dist/kx100_h5/Client/views',
-                            'dist/kx100_h5/Client/docs',
-                            'dist/kx100_h5/Client/test',
-                            'dist/kx100_h5/Client/logs'
-                        ], function() {
-                            process.stdout.write(util.format('\x1b[32m%s\x1b[0m', '  successful!\n\n'));
-                            deferred.resolve(true);
-                        });
-                    })
-                    .on('error', function(error) {
-                        process.stdout.write(util.format('\x1b[31m%s\x1b[0m', '  failed!\n\n'));
-                        deferred.reject(new Error(error));
-                    });
+            require('./task.autoprefixer')(function(success) {
+                deferred.resolve(true);
             });
             return deferred.promise;
         })
-        .then(function(success) { //第五步:合并和压缩app目录下的脚步文件
+        .then(function(success) { //第二步，清空之前的dist目录
             if (success) {
                 var deferred = Q.defer();
-                process.stdout.write(util.format('\x1b[37m%s', '6)'));
+                process.stdout.write(util.format('\x1b[33m%s\x1b[0m', ' cleaning dist directory...'));
+                del(['dist'], function() {
+                    process.stdout.write(util.format('\x1b[32m%s\x1b[0m', '  successful!\n\n'));
+                    process.stdout.write(util.format('\x1b[37m%s', '2)'));
+                    process.stdout.write(util.format('\x1b[33m%s\x1b[0m', ' copy client directory to dist directory...'));
+                    gulp.src(['./**', '!dist/**', '!zipfiles/**', '!docs/**', '!test/**', '!logs/**', '!bower.json', '!README.md', '!bower_components'])
+                        .pipe(gulp.dest('dist/kx100_h5/Client'))
+                        .on('finish', function() {
+                            del([
+                                'dist/kx100_h5/Client/assets/image',
+                                'dist/kx100_h5/Client/zipfiles',
+                                'dist/kx100_h5/Client/views',
+                                'dist/kx100_h5/Client/docs',
+                                'dist/kx100_h5/Client/test',
+                                'dist/kx100_h5/Client/logs'
+                            ], function() {
+                                process.stdout.write(util.format('\x1b[32m%s\x1b[0m', '  successful!\n\n'));
+                                deferred.resolve(true);
+                            });
+                        })
+                        .on('error', function(error) {
+                            process.stdout.write(util.format('\x1b[31m%s\x1b[0m', '  failed!\n\n'));
+                            deferred.reject(new Error(error));
+                        });
+                });
+                return deferred.promise;
+            }
+        })
+        .then(function(success) { //第三步:合并和压缩app目录下的脚步文件
+            if (success) {
+                var deferred = Q.defer();
+                process.stdout.write(util.format('\x1b[37m%s', '3)'));
                 process.stdout.write(util.format('\x1b[33m%s\x1b[0m', ' combine and compress js files in app directory...'));
                 rjs({
                         baseUrl: process.cwd() + "/dist/kx100_h5/Client/app",
@@ -69,10 +77,10 @@ module.exports = function(callback) {
                 return true; //rjs插件pipe之后，没有封装数据流的finish和error事件，所以这里需要手动返回true
             }
         })
-        .then(function(success) { //第六步:清除app目录下的脚本文件，重命名app.min.js
+        .then(function(success) { //第四步:清除app目录下的脚本文件，重命名app.min.js
             if (success) {
                 var deferred = Q.defer();
-                process.stdout.write(util.format('\x1b[37m%s', '7)'));
+                process.stdout.write(util.format('\x1b[37m%s', '4)'));
                 process.stdout.write(util.format('\x1b[33m%s\x1b[0m', ' rename app.min.js to app.js...'));
                 del([
                     'dist/kx100_h5/Client/app/module',
@@ -95,10 +103,10 @@ module.exports = function(callback) {
                 return deferred.promise;
             }
         })
-        .then(function(data) { //第七步:压缩assets/script目录下的脚本文件
+        .then(function(data) { //第五步:压缩assets/script目录下的脚本文件
             if (data) {
                 var deferred = Q.defer();
-                process.stdout.write(util.format('\x1b[37m%s', '8)'));
+                process.stdout.write(util.format('\x1b[37m%s', '5)'));
                 process.stdout.write(util.format('\x1b[33m%s\x1b[0m', ' compress js files in assets/script directory ...'));
                 del(['dist/kx100_h5/Client/assets/script/**/*.js'], function() {
                     gulp.src('assets/script/**/*.js')
@@ -116,7 +124,7 @@ module.exports = function(callback) {
                 return deferred.promise;
             }
         })
-        .then(function(success) { //第九步:压缩views目录中html文件
+        .then(function(success) { //第六步:压缩views目录中html文件
             if (success) {
                 var deferred = Q.defer();
                 process.stdout.write(util.format('\x1b[37m%s', '11)'));
@@ -140,10 +148,10 @@ module.exports = function(callback) {
                 return deferred.promise;
             }
         })
-        .then(function(success) { //第十步:编译、合并和压缩CSS文件
+        .then(function(success) { //第七步:编译、合并和压缩CSS文件
             if (success) {
                 var deferred = Q.defer();
-                process.stdout.write(util.format('\x1b[37m%s', '12)'));
+                process.stdout.write(util.format('\x1b[37m%s', '7)'));
                 process.stdout.write(util.format('\x1b[33m%s\x1b[0m', ' compile then combine and compress css style files...'));
                 Q.fcall(function() { //压缩主体样式
                         requirejs.optimize({
@@ -182,7 +190,7 @@ module.exports = function(callback) {
                 return deferred.promise;
             }
         })
-        .then(function(success) { //第十一步:压缩图标文件
+        .then(function(success) { //第八步:压缩图标文件
             if (success) {
                 var deferred = Q.defer();
                 process.stdout.write(util.format('\x1b[32m%s\x1b[0m', '  successful!\n\n'));
@@ -211,7 +219,7 @@ module.exports = function(callback) {
                 return deferred.promise;
             }
         })
-        .then(function(success) { //第十二步:移除bower_components目录下的*.js文件中的sourceMappingURL注释
+        .then(function(success) { //第九步:移除bower_components目录下的*.js文件中的sourceMappingURL注释
             if (success) {
                 var deferred = Q.defer();
                 process.stdout.write(util.format('\x1b[37m%s', '14)'));
@@ -234,7 +242,7 @@ module.exports = function(callback) {
                 return deferred.promise;
             }
         })
-        .then(function(success) { //第十三步:压缩require.js源代码
+        .then(function(success) { //第十步:压缩require.js源代码
             if (success) {
                 var deferred = Q.defer();
                 process.stdout.write(util.format('\x1b[37m%s', '15)'));

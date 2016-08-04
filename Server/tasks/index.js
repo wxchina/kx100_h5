@@ -15,6 +15,7 @@ module.exports = function() {
         build: require('./task.build'), //系统编译输出静态资源
         deploy: require('./task.deploy'), //前端工程部署命令
         publish: require('./task.publish'), //前端工程打包命令
+        autoprefixer: require('./task.autoprefixer'), //前端css自动加前缀命令
         default: require('./task.default') //默认命令
     };
 };

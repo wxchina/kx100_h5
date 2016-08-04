@@ -300,9 +300,7 @@ textarea:focus {
 
 .flexbox {
     display: -webkit-box;
-    display: -moz-box;
     display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
 }
 
@@ -310,16 +308,23 @@ textarea:focus {
 /*水平垂直居中*/
 
 .flex-center {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .absolute-center {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 }
 
 .grey {
@@ -359,9 +364,15 @@ textarea:focus {
     position: fixed;
     top: 0;
     left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .loading-box .loading-content {
@@ -442,6 +453,8 @@ textarea:focus {
 .calendar-content .calendar-list,
 .calendar-content .selected-content,
 .calendar-content .calendar-foot {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -452,7 +465,9 @@ textarea:focus {
 .calendar-content .calendar-list >div,
 .calendar-content .selected-content > p,
 .calendar-content .calendar-foot > div {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     text-align: center;
 }
 

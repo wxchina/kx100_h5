@@ -27,6 +27,8 @@ module.exports = function() {
     process.stdout.write(util.format('\x1b[37m%s', 'auto exec publish task then deploy to remote server\n\n'));
     process.stdout.write(util.format('\x1b[32m%s', '  node main.js publish: '));
     process.stdout.write(util.format('\x1b[37m%s', 'auto package and compress file to zip\n\n'));
+    process.stdout.write(util.format('\x1b[32m%s', '  node main.js autoprefixer: '));
+    process.stdout.write(util.format('\x1b[37m%s', 'auto exec add css prefixer task\n\n'));
     process.stdout.write(util.format('\x1b[32m%s', '  node main.js default: '));
     process.stdout.write(util.format('\x1b[37m%s', 'default task that start web server,you can do this with '));
     process.stdout.write(util.format('\x1b[32m%s', 'node main.js\n\n'));
