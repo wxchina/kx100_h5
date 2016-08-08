@@ -312,11 +312,11 @@ textarea:focus {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .absolute-center {
@@ -324,7 +324,7 @@ textarea:focus {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .grey {
@@ -368,11 +368,11 @@ textarea:focus {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .loading-box .loading-content {
@@ -411,25 +411,23 @@ textarea:focus {
 
 #datePlugin {
     position: absolute;
-    top: 7rem;
-    right: 0;
-    width: 33rem;
+    top: 10rem;
+    right: 4rem;
 }
 
-.active-box #datePlugin {
-    width: 30rem;
+.active-detail #datePlugin {
+    top: 7rem;
 }
 
 .calendar-content {
     position: relative;
     background: #ffffff;
     box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.7);
-    width: 30rem;
+    width: 28rem;
     border-radius: 1rem;
     color: #333333;
     font-size: 1.3rem;
     top: 2rem;
-    left: 2rem;
     font-size: 2rem;
     padding: 1.5rem 1.5rem 0 1.5rem;
     z-index: 999;
@@ -443,7 +441,7 @@ textarea:focus {
 }
 
 .require-box .calendar-content > img {
-    top: -2.2rem;
+    top: -2rem;
 }
 
 .calendar-content .selected-content {
@@ -463,32 +461,29 @@ textarea:focus {
 }
 
 .calendar-content .calendar-list >div,
-.calendar-content .selected-content > p,
+.calendar-content .selected-content > div,
 .calendar-content .calendar-foot > div {
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
     text-align: center;
 }
 
-.calendar-content .selected-content > p > span {
-    display: block;
-}
-
-.calendar-content .selected-content > p > span:first-child {
+.calendar-content .selected-content > div > div {
     color: #2a97ff;
+    position: relative;
 }
 
-.calendar-content .selected-content > p > span:last-child {
+.calendar-content .selected-content > div > span {
     color: #8c8c8c;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
 }
 
 .calendar-content .calendar-list {
     border-bottom: 1px solid #cccccc;
     border-top: 1px solid #cccccc;
-    padding: 1rem;
-    height: 9.5rem;
+    padding: 0 1rem;
+    height: 10.5rem;
     overflow: hidden;
 }
 
@@ -496,6 +491,11 @@ textarea:focus {
     height: 3.5rem;
     font-size: 1.6rem;
     line-height: 3.5rem;
+}
+
+.calendar-content .calendar-list li.cur {
+    color: #2a97ff;
+    font-weight: bold;
 }
 
 .calendar-content .calendar-foot > div:first-child {
@@ -507,10 +507,11 @@ textarea:focus {
 }
 
 .calendar-content .calendar-foot > div {
-    line-height: 4rem;
+    line-height: 3rem;
+    font-size: 1.7rem;
 }
 
-.calendar-content .selected-content .cur:before {
+.calendar-content .selected-content > div.cur > div:before {
     content: "";
     background-image: url("image/orange-right.png");
     background-size: 1rem;
@@ -521,13 +522,13 @@ textarea:focus {
     top: 0.5rem;
 }
 
-.calendar-content .selected-content .cur:after {
+.calendar-content .selected-content div.cur > div:after {
     content: "";
     background-image: url("image/orange-left.png");
     background-size: 1rem;
     width: 1rem;
     height: 1rem;
     position: absolute;
-    left: 12rem;
-    bottom: 2.5rem;
+    right: .5rem;
+    top: .5rem;
 }

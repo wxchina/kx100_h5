@@ -9,9 +9,6 @@
             indexY = 1, //当前选中的年份
             indexM = 1, //当前选中的月份
             indexD = 1, //当前选中的日期
-            initY = parseInt((nowdate.getYear() + "").substr(1, 2)),
-            initM = parseInt(nowdate.getMonth() + "") + 1,
-            initD = parseInt(nowdate.getDate() + ""),
             yearScroll = null,
             monthScroll = null,
             dayScroll = null;
@@ -19,16 +16,12 @@
         //插件默认选项    
         $.fn.date.defaultOptions = {
             beginyear: 2000, //日期--年--份开始
-            endyear: 2020, //日期--年--份结束
+            endyear: 2030, //日期--年--份结束
             beginmonth: 1, //日期--月--份结束
             endmonth: 12, //日期--月--份结束
             beginday: 1, //日期--日--份结束
             endday: 31, //日期--日--份结束
-            curdate: false, //打开日期是否定位到当前日期
-            theme: "date", //控件样式（1：日期，2：日期+时间）
-            mode: null, //操作模式（滑动模式）
-            event: "click", //打开日期插件默认方式为点击后后弹出日期 
-            show: true
+            curdate: true //打开日期是否定位到当前日期
         };
 
         //用户选项覆盖插件默认选项   
@@ -51,32 +44,36 @@
             monthScroll.refresh();
             dayScroll.refresh();
 
-            resetInitDate();
-            yearScroll.scrollTo(0, initY * 40, 100, true);
-            monthScroll.scrollTo(0, initM * 40 - 40, 100, true);
-            dayScroll.scrollTo(0, initD * 40 - 40, 100, true);
+            initDate();
         }
 
+        /*初始化日期控件*/
+        function initDate() {
+            var totalHeight = $('#yearwrapper').find('ul').height(),
+                amount = $('#yearwrapper').find('ul li').length,
+                single = totalHeight / amount,
+                initY = nowdate.getFullYear(), //默认选中的年
+                initM = nowdate.getMonth() + 1, //默认选中的月
+                initD = nowdate.getDate(), //默认选中的日
+                beginyear = $.fn.date.defaultOptions.beginyear,
+                beginmonth = $.fn.date.defaultOptions.beginmonth,
+                beginday = $.fn.date.defaultOptions.beginday,
+                indexY,
+                indexM,
+                indexD;
 
-        function resetIndex() {
-            indexY = 1;
-            indexM = 1;
-            indexD = 1;
-        }
-
-        function resetInitDate() {
-            if (opts.curdate) {
-                return false;
-            } else if (that.val() === "") {
-                return false;
-            }
-            initY = that.val() ? parseInt(that.val().substr(2, 2)) : that.val();
-            initM = that.val() ? parseInt(that.val().substr(5, 2)) : that.val();
-            initD = that.val() ? parseInt(that.val().substr(8, 2)) : that.val();
+            indexY = initY + 2 - beginyear;
+            indexM = initM + 2 - beginmonth;
+            indexD = initD + 2 - beginday;
+            $('#yearwrapper').find('ul li').eq(indexY + 1).addClass('cur');
+            $('#monthwrapper').find('ul li').eq(indexM + 1).addClass('cur');
+            $('#daywrapper').find('ul li').eq(indexD + 1).addClass('cur');
+            yearScroll.scrollTo(0, -indexY * single);
+            monthScroll.scrollTo(0, -indexM * single);
+            dayScroll.scrollTo(0, -indexD * single);
         }
 
         function bindEvent() {
-            resetIndex();
             $("#dateconfirm").on('touchend', function(e) {
                 e.stopPropagation();
                 $(".calendar-content").hide();
@@ -85,7 +82,7 @@
                 e.stopPropagation();
                 $(".calendar-content").hide();
             });
-            $('.selected-content').find('p').on('touchend', function(e) {
+            $('.selected-content .start, .selected-content .end').on('touchend', function(e) {
                 e.stopPropagation();
                 if ($(this).hasClass('cur')) return;
                 $(this).siblings().removeClass('cur');
@@ -111,19 +108,31 @@
             //滚动结束
             yearScroll.on('scrollEnd', function() {
                 console.log(yearScroll.y);
+                $('#yearwrapper').find('ul li').removeClass('cur').end().find('ul li').eq(yearScroll.currentPage.pageY + 3).addClass('cur');
+                var $selector = $('#datePlugin').find('.selected-content').find('div.cur').find('div').find('span').eq(0);
+                var curTime = $('#yearwrapper').find('ul li.cur').text().slice(0, -1) + "." + $selector.text().split('.')[1] + "." + $selector.text().split('.')[2];
+                $selector.text(curTime);
             });
             monthScroll.on('scrollEnd', function() {
                 console.log(monthScroll.y);
+                $('#monthwrapper').find('ul li').removeClass('cur').end().find('ul li').eq(monthScroll.currentPage.pageY + 3).addClass('cur');
+                var $selector = $('#datePlugin').find('.selected-content').find('div.cur').find('div').find('span').eq(0);
+                var curTime = $selector.text().split('.')[0] + "." + $('#monthwrapper').find('ul li.cur').text().slice(0, -1) + "." + $selector.text().split('.')[2];
+                $selector.text(curTime);
             });
             dayScroll.on('scrollEnd', function() {
                 console.log(dayScroll.y);
+                $('#daywrapper').find('ul li').removeClass('cur').end().find('ul li').eq(dayScroll.currentPage.pageY + 3).addClass('cur');
+                var $selector = $('#datePlugin').find('.selected-content').find('div.cur').find('div').find('span').eq(0);
+                var curTime = $selector.text().split('.')[0] + "." + $selector.text().split('.')[1] + "." + $('#daywrapper').find('ul li.cur').text().slice(0, -1)
+                $selector.text(curTime);
             });
 
         }
 
         function initUI() {
-            $('#datePlugin').find('.selected-content').find('p.start').find('span').eq(0).text(new Date().getFullYear() + '.' + new Date().getMonth() + '.' + new Date().getDate());
-            $('#datePlugin').find('.selected-content').find('p.end').find('span').eq(0).text(new Date().getFullYear() + '.' + new Date().getMonth() + '.' + new Date().getDate());
+            $('#datePlugin').find('.selected-content').find('.start').find('div span').text(new Date().getFullYear() + '.' + (new Date().getMonth() + 1) + '.' + +new Date().getDate());
+            $('#datePlugin').find('.selected-content').find('.end').find('div span').text(new Date().getFullYear() + '.' + (new Date().getMonth() + 1) + '.' + new Date().getDate());
         }
 
         function checkdays(year, month) {
@@ -150,14 +159,14 @@
                 '<div class="calendar-content">' +
                 '<img src="assets/css/image/triangle.png" />' +
                 '<div class="selected-content">' +
-                '<p class="start cur">' +
-                '<span>2016.5.22</span>' +
+                '<div class="start cur">' +
+                '<div><span>2016.5.22</span></div>' +
                 '<span>开始时间</span>' +
-                '</p>' +
-                '<p class="end">' +
-                '<span>2016.7.24</span>' +
+                '</div>' +
+                '<div class="end">' +
+                '<div><span>2016.7.24</span></div>' +
                 '<span>结束时间</span>' +
-                '</p>' +
+                '</div>' +
                 '</div>' +
                 '<div class="calendar-list">' +
                 '<div id="yearwrapper"><ul></ul></div>' +
@@ -172,30 +181,39 @@
         //创建 --年-- 列表
         function createYearUI() {
             var str = "";
+            str += '<li style="visibility: hidden;"></li>';
+            str += '<li style="visibility: hidden;"></li>';
+            str += '<li style="visibility: hidden;"></li>';
             for (var i = opts.beginyear; i <= opts.endyear; i++) {
                 str += '<li>' + i + '年</li>'
             }
-            return str + "<li>&nbsp;</li>";;
+            str += '<li style="visibility: hidden;">opts.endyear+1</li>';
+            return str;
         }
         //创建 --月-- 列表
         function createMonthUI() {
             var str = "";
+            str += '<li style="visibility: hidden;"></li>';
+            str += '<li style="visibility: hidden;"></li>';
+            str += '<li style="visibility: hidden;"></li>';
             for (var i = opts.beginmonth; i <= opts.endmonth; i++) {
-                if (i < 10) {
-                    i = "0" + i
-                }
                 str += '<li>' + i + '月</li>'
             }
-            return str + "<li>&nbsp;</li>";;
+            str += '<li>&nbsp;</li>';
+            return str;
         }
         //创建 --日-- 列表
         function createDayUI() {
             $("#daywrapper ul").html("");
             var str = "";
+            str += '<li style="visibility: hidden;"></li>';
+            str += '<li style="visibility: hidden;"></li>';
+            str += '<li style="visibility: hidden;"></li>';
             for (var i = opts.beginday; i <= opts.endday; i++) {
                 str += '<li>' + i + '日</li>'
             }
-            return str + "<li>&nbsp;</li>";;
+            str += '<li>&nbsp;</li>';
+            return str;
         }
 
     }

@@ -201,12 +201,12 @@
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 .industry-box > div .row {
     -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-basis: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -214,15 +214,15 @@
 
 .industry-box > div a {
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
     margin: 1rem 1.4rem;
 }
 
 .industry-box > div .row.two a {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 23%;
-            flex: 0 0 23%;
+    -ms-flex: 0 0 23%;
+    flex: 0 0 23%;
 }
 
 .industry-box > div a > p {
@@ -422,8 +422,8 @@
 
 #terminalDetail .terminal-info {
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 
 #terminalDetail .terminal-info > div {
@@ -661,8 +661,8 @@ li > label > i {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     position: fixed;
     left: 0;
     right: 0;
@@ -675,8 +675,8 @@ li > label > i {
 
 .performlist-box footer a {
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
     text-align: center;
     font-size: 1rem;
 }
@@ -738,8 +738,8 @@ li > label > i {
 
 .require-box > ul > li {
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 
 .require-box > ul > li:first-child {
@@ -792,8 +792,8 @@ li > label > i {
 .order-header li,
 .order-content li {
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 
 .order-header li:not(:last-child),
@@ -808,8 +808,8 @@ li > label > i {
 .order-content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     background-color: #ffffff;
 }
 
@@ -887,8 +887,8 @@ li > label > i {
     border-right: 1px solid #34acea;
     font-size: 1.3rem;
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 
 .rank-box .tab-box li:last-child {
@@ -916,11 +916,11 @@ li > label > i {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     height: 9.25rem;
     background-color: #ffffff;
     color: #343434;
@@ -933,8 +933,8 @@ li > label > i {
 
 .visit-box nav > ul li {
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
     text-align: center;
 }
 
@@ -1280,11 +1280,11 @@ li.display-pics img {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .promotion-list li > div:nth-child(2) > span {
@@ -1321,8 +1321,8 @@ li.display-pics img {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     background-color: #f2f2f2;
 }
 
@@ -1375,8 +1375,14 @@ li.display-pics img {
 
 /*关联终端*/
 
+.relate-terminal .simple-list p {
+    width: 5rem;
+}
+
 .relate-terminal .simple-list h4 {
-    width: 24rem;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 
 .relate-terminal .simple-list p {
@@ -1477,8 +1483,8 @@ li.display-pics img {
 
 .coop_invest li span:first-child {
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 
 .coop_invest li span:last-child {
@@ -1540,16 +1546,16 @@ li.display-pics img {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     height: 100%;
     padding: 0 2rem;
 }
 
 .sales-async section {
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
     margin-top: 2rem;
 }
 
@@ -1565,6 +1571,10 @@ li.display-pics img {
 
 .visit-async section:first-child .chart-box {
     height: 22rem;
+}
+
+.visit-async section:last-child {
+    margin-top: -5rem;
 }
 
 .promotion section .chart-box {
@@ -1592,8 +1602,8 @@ li.display-pics img {
 
 .sales-async nav > ul > li {
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
     text-align: center;
 }
 
@@ -1632,11 +1642,11 @@ li.display-pics img {
 
 .sales-async .select-month:after {
     content: "";
-    background-image: url("image/triangle-bottom.png");
+    background-image: url("image/sweeptee.png");
     background-size: 1.5rem;
-    width: 1.5rem;
+    width: 1.2rem;
     height: 1rem;
     position: absolute;
     top: 2.5rem;
-    left: 6rem;
+    right: -1rem;
 }
